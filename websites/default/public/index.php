@@ -17,13 +17,13 @@ try {
     */
 
     //Przykład zapytania wczytującego dane:
-    $sql = 'SELECT `joketext` FROM `joke`';
+    $sql = 'SELECT * FROM `joke`';
     $results = $pdo->query($sql);
     //przepisanie wyników odczytu z bazy do tablicy jokes[]
-    while ($row = $results->fetch()) {
-        $jokes[] = $row['joketext'];
-    }
-
+    // while ($row = $results->fetch()) {
+    //     $jokes[] = $row['joketext'];
+    // }
+        $jokes=$results;
     
 } catch (PDOException $e) {
     $error = "Błąd bazy danych: ";
