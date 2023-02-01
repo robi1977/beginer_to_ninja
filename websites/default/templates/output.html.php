@@ -7,6 +7,12 @@
     <title>IJDB</title>
 </head>
 <body>
-    <?php echo $output; ?>
+    <?php if(isset($error)) { echo '<p style="color: red;">'.$error.'</p>'; } ?>
+    <?php if(isset($jokes)) {
+        foreach ($jokes as $joke) {
+            echo '<p>'.$joke.'</p>';
+        }
+    }
+    ?>
 </body>
 </html>
