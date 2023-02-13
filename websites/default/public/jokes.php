@@ -12,15 +12,10 @@ try {
     
     $title = 'Lista dowcipów';
 
-    $output = '';
+    ob_start(); //otwarcie bufora
+    include __DIR__.'/../templates/jokes.html.php'; //wczytanie konstrukcji html z pliku tworzącego listę dowcipów
+    $output = ob_get_clean(); //przeniesienie bufora do zmiennej i wyczyszczenie go
 
-    foreach($jokes as $joke) {
-        $output.= '<blockquote>';
-        $output.= '<p>';
-        $output.= $joke;
-        $output.= '</p>';
-        $output.= '</blockquote>';
-    }
 } catch (PDOException $e) {
     $title = 'Wystąpił błąd';
 
