@@ -7,7 +7,7 @@ try {
     $results = $pdo->query($sql);
     
     while ($row = $results->fetch()) {
-        $jokes[] = $row['joketext']; 
+        $jokes[] = $row['id'].' - '.$row['joketext']; 
     }
     
     $title = 'Lista dowcipów';
