@@ -3,11 +3,11 @@
 try {
     $pdo = new PDO('mysql:host=mysql;dbname=ijdb;charset=utf8mb4','ijdbuser', 'tajemnica');
 
-    $sql = 'SELECT * FROM `joke`';
+    $sql = 'SELECT `id`, `joketext` FROM `joke`';
     $results = $pdo->query($sql);
     
     while ($row = $results->fetch()) {
-        $jokes[] = $row['id'].' - '.$row['joketext']; 
+        $jokes[] = ['id' => $row['id'], 'joketext' => $row['joketext']]; 
     }
     
     $title = 'Lista dowcipów';
