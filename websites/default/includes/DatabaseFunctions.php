@@ -9,3 +9,14 @@ function totalJokes($pdo)
 
     return $row[0];
 }
+
+function getJoke($pdo, $id) {
+    $stsm = $pdo->prepare('SELECT * FROM `joke` WHERE `id` = :id');
+
+    $values = [
+        'id' => $is
+    ];
+
+    $stsm->execute($values);
+    return $stsm->fetch();
+}
