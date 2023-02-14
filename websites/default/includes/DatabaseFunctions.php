@@ -60,3 +60,12 @@ function deleteJoke($pdo, $id)
 
     $stsm->execute($values);
 }
+
+function allJokes($pdo)
+{
+    $stsm = $pdo->prepare('SELECT `joke`.`id`, `joketext`, `name`, `email` FROM `joke` 
+        INNER JOIN `author` ON `authorid` = `author`.`id`');
+    $stsm->execute();
+
+    return $stsm->fetchAll();
+}
