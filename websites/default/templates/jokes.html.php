@@ -1,3 +1,4 @@
+<p>W bazie znajduje się <?=$totalJokes?> dowcipów.</p>
 <?php foreach($jokes as $joke): ?>
     <blockquote>
         <p>
