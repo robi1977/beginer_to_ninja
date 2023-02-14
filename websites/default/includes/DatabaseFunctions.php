@@ -14,7 +14,7 @@ function getJoke($pdo, $id) {
     $stsm = $pdo->prepare('SELECT * FROM `joke` WHERE `id` = :id');
 
     $values = [
-        'id' => $is
+        'id' => $id
     ];
 
     $stsm->execute($values);
