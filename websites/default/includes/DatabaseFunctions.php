@@ -50,3 +50,13 @@ function updateJoke($pdo, $jokeId, $joketext, $authorId)
 
     $stsm->execute($values);
 }
+
+function deleteJoke($pdo, $id)    
+{
+    $stsm = $pdo->prepare('DELETE FROM `joke` WHERE `id` = :id');
+    $values = [
+        'id' => $id
+    ];
+
+    $stsm->execute($values);
+}
