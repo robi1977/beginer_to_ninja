@@ -2,13 +2,9 @@
 if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) { 
     try {
         include __DIR__.'/../includes/DatabaseConnection.php';
-        //przygotowania zapytania do bazy
-        $sql = 'INSERT INTO `joke` SET `joketext` = :joketext, `jokedate` = CURDATE()';
-        $stsm = $pdo->prepare($sql);
-        //powiązanie zmiennych z zapytania ze zmiennymi z tablicy $_POST
-        $stsm->bindValue(':joketext', $_POST['joketext']);
-        //wykonanie zapytania
-        $stsm->execute();
+        include __DIR__.'/../includes/DatabaseFunctions.php';
+        
+        insertJoke($pdo, $_POST['joketext'], 1);
 
         //przekierowanie na stronę z listą dowcipów
         header('location: jokes.php');

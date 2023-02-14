@@ -20,3 +20,17 @@ function getJoke($pdo, $id) {
     $stsm->execute($values);
     return $stsm->fetch();
 }
+
+function insertJoke($pdo, $joketext, $authorId)
+{
+    $stsm = $pdo->prepare('INSERT INTO `joke` (`joketext`,`jokedate`,`authorId`) 
+        VALUES (:joketext, :jokedate, :authorId)');
+    
+    $values = [
+        ':joketext'=> $joketext,
+        ':authorId' => $authorId,
+        ':jokedate' => date('Y-m-d'),
+    ];
+
+    $stsm->execute($values);
+}
