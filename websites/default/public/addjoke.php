@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) { 
     try {
-        $pdo = new PDO('mysql:host=mysql;dbname=ijdb;charset=utf8mb4','ijdbuser', 'tajemnica');
+        include __DIR__.'/../includes/DatabaseConnection.php';
         //przygotowania zapytania do bazy
         $sql = 'INSERT INTO `joke` SET `joketext` = :joketext, `jokedate` = CURDATE()';
         $stsm = $pdo->prepare($sql);

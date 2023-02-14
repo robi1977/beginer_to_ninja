@@ -1,6 +1,6 @@
 <?php
 try {
-    $pdo = new PDO('mysql:host=mysql;dbname=ijdb;charset=utf8mb4','ijdbuser', 'tajemnica');
+    include __DIR__.'/../includes/DatabaseConnection.php';
 
     $sql = 'DELETE FROM `joke` WHERE `id` = :id';
     $stsm = $pdo->prepare($sql);
