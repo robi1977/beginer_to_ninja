@@ -34,3 +34,19 @@ function insertJoke($pdo, $joketext, $authorId)
 
     $stsm->execute($values);
 }
+
+function updateJoke($pdo, $jokeId, $joketext, $authorId)
+{
+    $stsm = $pdo->prepare('UPDATE `joke` SET 
+        `authorId` = :authorId,
+        `joketext` = :joketext 
+        WHERE `id` = :id');
+    
+    $values = [
+        'id' => $jokeId,
+        'joketext' => $joketext,
+        'authorId' => $authorId
+    ];
+
+    $stsm->execute($values);
+}
