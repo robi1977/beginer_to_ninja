@@ -13,7 +13,7 @@ try {
         header('location: jokes.php');
     } else {
         if (isset($_GET['id'])) {
-            $joke = find($pdo, 'joke','id', $_GET['id'])[0];
+            $joke = find($pdo, 'joke','id', $_GET['id'])[0] ?? '';
         } else {
             $joke = null;
         }
