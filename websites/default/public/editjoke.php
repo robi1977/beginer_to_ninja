@@ -3,7 +3,7 @@ try {
     include __DIR__.'/../includes/DatabaseConnection.php';
     include __DIR__.'/../includes/DatabaseFunctions.php';
 
-    if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
+    if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0 && $_POST['id'] != '') {
         update($pdo, 'joke', 'id', [
             'id' => $_POST['jokeid'],
             'joketext' => $_POST['joketext'],
@@ -13,7 +13,7 @@ try {
         header('location: jokes.php');
     } else {
         if (isset($_GET['id'])) {
-            $joke = find($pdo, 'joke','id', $_GET['id'])[0] ?? '';
+            $joke = find($pdo, 'joke','id', $_GET['id'])[0] ?? null;
         } else {
             $joke = null;
         }
