@@ -167,3 +167,24 @@ function update($pdo, $table, $primaryKey, $values)
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
+function findById($pdo, $table, $primaryKey, $value)
+{
+    $stsm = 'SELECT * FROM `'.$table.'` WHERE `'.$primaryKey.'` = :value';
+    $values = [
+        'value' => $value
+    ];
+    $stsm = $pdo->preprare($query);
+    $stsm->execute($values);
+    return $stsm->fetch(); //UWAGA: zwraca pojedyńczy wpis
+}
+function find($pdo, $table, $field, $value)
+{
+    $stsm = 'SELECT * FROM `'.$table.'` WHERE `'.$field.'` = :value';
+    $values = [
+        'value' => $value
+    ];
+    $stsm = $pdo->prepare($query);
+    $stsm->execute($values);
+
+    return $stsm->fetchAll(); //UWAGA: zwraca tablicę
+}
