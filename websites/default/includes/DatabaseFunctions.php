@@ -21,17 +21,23 @@ function getJoke($pdo, $id) {
     return $stsm->fetch();
 }
 
-function insertJoke($pdo, $joketext, $authorId)
+function insertJoke($pdo, $values)
 {
-    $stsm = $pdo->prepare('INSERT INTO `joke` (`joketext`,`jokedate`,`authorId`) 
-        VALUES (:joketext, :jokedate, :authorId)');
-    
-    $values = [
-        ':joketext'=> $joketext,
-        ':authorId' => $authorId,
-        ':jokedate' => date('Y-m-d'),
-    ];
+    //tworzenie zapytania do bazy danych
+    $query = 'INSERT INTO `joke` (';
+    foreach($values as $key => $value) {
+        $query .='`'.$key.'`,';
+    }
+    $query = rtrim($query, ','); //usuniecie ostatniego przecinka pochodzacego z dzialania petli foreach
+    $query .= ') VALUES (';
+    foreach($values as $key => $value) {
+        $query .= ':'.$key.', ';
+    }
+    $query = rtrim($query, ','); //j.w.
+    $query .=')'; 
+    //powyższe zapytanie ma trochę inną konstrukcję niż zapytanie w updateJoke
 
+    $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
 
