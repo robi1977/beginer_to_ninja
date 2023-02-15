@@ -129,9 +129,9 @@ function findAll($pdo, $table)
     $stsm->execute();
     return $stsm->fetchAll();
 }
-function delete($pdo, $table, $id)
+function delete($pdo, $table, $field, $value)
 {
-    $values = [':id' => $id];
-    $stsm = $pdo->prepare('DELETE FROM `'.$table.'` WHERE `id`= :id');
+    $values = [':value' => $value];
+    $stsm = $pdo->prepare('DELETE FROM `'.$table.'` WHERE `'.$field.'`= :value');
     $stsm->execute($values);
 }
