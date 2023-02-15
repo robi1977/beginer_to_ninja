@@ -1,25 +1,5 @@
 <?php
 
-function totalJokes($pdo)
-{
-    $stsm = $pdo->prepare('SELECT COUNT(*) FROM `joke`');
-    $stsm->execute();
-
-    $row = $stsm->fetch();
-
-    return $row[0];
-}
-
-function getJoke($pdo, $id) {
-    $stsm = $pdo->prepare('SELECT * FROM `joke` WHERE `id` = :id');
-
-    $values = [
-        'id' => $id
-    ];
-
-    $stsm->execute($values);
-    return $stsm->fetch();
-}
 
 function insertJoke($pdo, $values)
 {
@@ -43,86 +23,21 @@ function insertJoke($pdo, $values)
     $stsm->execute($values);
 }
 
-function updateJoke($pdo, $values)
-{
-    //tworzenie treści zapytania
-    $query = 'UPDATE `joke` SET ';
-    $updateFields = [];
-    foreach($values as $key => $value) {
-        $updateFields[] = '`'.$key.'` = :'.$key;
-    }
-
-    $query .= implode(', ', $updateFields);
-    $query .= ' WHERE `id` = :primaryKey';
-    //dopisanie primaryKey do tablicy. Zastosowano zmienną primaryKey ponieważ w zapytaniu nie może być użyte 2 raz odwołanie do zmiennej id
-    $values['primaryKey'] = $values['id'];
-
-    $values = datesFormats($values);
-
-    $stsm = $pdo->prepare($query);
-    $stsm->execute($values);
-}
-
-function deleteJoke($pdo, $id)    
-{
-    $stsm = $pdo->prepare('DELETE FROM `joke` WHERE `id` = :id');
-    $values = [
-        'id' => $id
-    ];
-
-    $stsm->execute($values);
-}
-
-function allJokes($pdo)
-{
-    $stsm = $pdo->prepare('SELECT `joke`.`id`, `joketext`, `jokedate`, `name`, `email` FROM `joke` 
-        INNER JOIN `author` ON `authorid` = `author`.`id`');
-    $stsm->execute();
-
-    return $stsm->fetchAll();
-}
 
 function datesFormats($values)
 {
     foreach($values as $key => $value) {
-        if($value instanceof DataTime) {
-            $values[$key] = $value->format('Y-m-d H:i:s');
+        if(is_object($value)){
+            if(get_class($value) == 'DateTime'){
+                $values[$key] = $value->format('Y-m-d H:i:s');
+            }
         }
-    }
+    } 
 
     return $values;
 }
 
-//CRUD dla tabeli author
-function allAuthors($pdo) 
-{
-    $stsm = $pdo->prepare('SELECT * FROM `author`');
-    $stsm->execute();
-    return $stsm->fetchAll();
-}
-function deleteAuthor($pdo, $id)
-{
-    $values = [':id' => $id];
-    $stsm = $pdo->prepare('DELETE FROM `author` WHERE `id` = :id');
-    $stsm->execute($values);
-}
-function insertAuthor($pdo, $values)
-{
-    $query = 'INSERT INTO `author` (';
-    foreach($values as $key => $value){
-        $query .= '`'.$key.'`,';
-    }
-    $query = rtrim($query, ',');
-    $query .= ') VALUES (';
-    foreach($values as $key => $value){
-        $query .=':'.$key.',';
-    }
-    $query = rtrim($query, ',');
-    $query .=')';
-    $values = datesFormats($values);
-    $stsm = $pdo->prepare($query);
-    $stsm->execute($values);
-}
+
 function findAll($pdo, $table)
 {
     $stsm = $pdo->prepare('SELECT * FROM `'.$table.'`');
@@ -147,11 +62,14 @@ function insert($pdo, $table, $values)
         $query .=':'.$key.',';
     }
     $query = rtrim($query, ',');
-    $query = rtrim($query, ',');
     $query .=')';
+ 
     $values = datesFormats($values);
+
+    
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
+
 }
 function update($pdo, $table, $primaryKey, $values)
 {
@@ -179,7 +97,7 @@ function findById($pdo, $table, $primaryKey, $value)
 }
 function find($pdo, $table, $field, $value)
 {
-    $stsm = 'SELECT * FROM `'.$table.'` WHERE `'.$field.'` = :value';
+    $query = 'SELECT * FROM `'.$table.'` WHERE `'.$field.'` = :value';
     $values = [
         'value' => $value
     ];
