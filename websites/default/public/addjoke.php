@@ -4,10 +4,10 @@ if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
         include __DIR__.'/../includes/DatabaseConnection.php';
         include __DIR__.'/../includes/DatabaseFunctions.php';
         
-        insertJoke($pdo, [
+        insert($pdo, 'joke', [
             'authorId' => 1,
             'joketext' => $_POST['joketext'],
-            'jokedate' => date('Y-m-d')
+            'jokedate' => new DateTime()
         ]);
 
         //przekierowanie na stronę z listą dowcipów
