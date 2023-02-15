@@ -4,7 +4,11 @@ try {
     include __DIR__.'/../includes/DatabaseFunctions.php';
 
     if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
-        updateJoke($pdo, $_POST['jokeid'], $_POST['joketext'], 1);
+        updateJoke($pdo, [
+            'id' => $_POST['id'],
+            'joketext' => $_POST['joketext'],
+            'authorId' => 1
+        ]);
 
         header('location: jokes.php');
     } else {
