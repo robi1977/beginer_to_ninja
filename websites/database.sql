@@ -93,7 +93,7 @@ CREATE TABLE `joke` (
 
 LOCK TABLES `joke` WRITE;
 /*!40000 ALTER TABLE `joke` DISABLE KEYS */;
-INSERT INTO `joke` VALUES (1,'        Stal facet obok betoniarki i się zmieszał.    ','2023-01-01',1),(2,'Robiła babcia na drutach, przejechał tramwaj i spadła.','2022-12-22',2),(3,'        Masochista prosi sadyste: uderz mnie, a sadysta na to: chciałbyś prawda?    ','2022-12-23',1),(4,'Poszla baba po mleko i dostala z banki.','2022-12-23',1),(5,'Szedl krawiec ulica i zaszyl sie w ciemnosciach.','2022-12-24',1),(6,'Szedl facet obok koparki i dal sie nabrac.','2022-12-30',2),(7,'Wstaje koles rano, pelno krwi na dywanie - patrzy: a tam ranne pantofle.','2023-01-02',2),(8,'Facet budzi sie rano - slyszy hala za oknem - patrzy: a tam temperatura spada.','2023-01-02',1),(9,'to jest 1 test dodawania dowcipów','2023-02-13',1);
+INSERT INTO `joke` VALUES (1,'                Stal facet obok betoniarki i się zamieszał.        ','2023-01-01',1),(2,'Robiła babcia na drutach, przejechał tramwaj i spadła.','2022-12-22',2),(3,'        Masochista prosi sadyste: uderz mnie, a sadysta na to: chciałbyś prawda?    ','2022-12-23',1),(4,'Poszla baba po mleko i dostala z banki.','2022-12-23',1),(5,'Szedl krawiec ulica i zaszyl sie w ciemnosciach.','2022-12-24',1),(6,'Szedl facet obok koparki i dal sie nabrac.','2022-12-30',2),(7,'Wstaje koles rano, pelno krwi na dywanie - patrzy: a tam ranne pantofle.','2023-01-02',2),(8,'Facet budzi sie rano - slyszy hala za oknem - patrzy: a tam temperatura spada.','2023-01-02',1),(9,'to jest 1 test dodawania dowcipów','2023-02-13',1);
 /*!40000 ALTER TABLE `joke` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5174,4 +5174,4 @@ USE `sys`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-14 15:25:12
+-- Dump completed on 2023-02-15 11:11:52

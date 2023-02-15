@@ -188,3 +188,11 @@ function find($pdo, $table, $field, $value)
 
     return $stsm->fetchAll(); //UWAGA: zwraca tablicę
 }
+function total($pdo, $table)
+{
+    $stsm = $pdo->prepare('SELECT COUNT(*) FROM `'.$table.'`');
+    $stsm->execute();
+    $row = $stsm->fetch();
+
+    return $row[0]; //zwrot wartości jako skalara
+}
