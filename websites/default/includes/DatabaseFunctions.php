@@ -37,11 +37,8 @@ function insertJoke($pdo, $values)
     $query .=')'; 
     //powyższe zapytanie ma trochę inną konstrukcję niż zapytanie w updateJoke
     //sprawdzenie czy ktorys z wpisow jest typu DataTime i przeformatowanie go
-    foreach($values as $key => $value) {
-        if($value instanceof DataTime) {
-            $values[$key] = $value->format('Y-m-d H:i:s');
-        }
-    }
+    $values = datesFormats($values);
+    
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
@@ -60,12 +57,7 @@ function updateJoke($pdo, $values)
     //dopisanie primaryKey do tablicy. Zastosowano zmienną primaryKey ponieważ w zapytaniu nie może być użyte 2 raz odwołanie do zmiennej id
     $values['primaryKey'] = $values['id'];
 
-    //sprawdzenie czy ktorys z wpisow jest typu DataTime i przeformatowanie go
-    foreach($values as $key => $value) {
-        if($value instanceof DataTime) {
-            $values[$key] = $value->format('Y-m-d H:i:s');
-        }
-    }
+    $values = datesFormats($values);
 
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
@@ -88,4 +80,15 @@ function allJokes($pdo)
     $stsm->execute();
 
     return $stsm->fetchAll();
+}
+
+function datesFormats($values)
+{
+    foreach($values as $key => $value) {
+        if($value instanceof DataTime) {
+            $values[$key] = $value->format('Y-m-d H:i:s');
+        }
+    }
+
+    return $values;
 }
