@@ -5,7 +5,7 @@ try {
 
     if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
         updateJoke($pdo, [
-            'id' => $_POST['id'],
+            'id' => $_POST['jokeid'],
             'joketext' => $_POST['joketext'],
             'authorId' => 1
         ]);
