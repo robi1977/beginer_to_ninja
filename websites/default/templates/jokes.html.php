@@ -5,8 +5,11 @@
         <?=htmlspecialchars($joke['joketext'], ENT_QUOTES, 'UTF-8')?>
         (by <a href="mailto:<?=htmlspecialchars($joke['email'], ENT_QUOTES, 'UTF-8')?>">
             <?=htmlspecialchars($joke['name'], ENT_QUOTES, 'UTF-8')?>
-        </a>)
-
+        </a>) on 
+        <?php
+            $date = new DateTime($joke['jokedate']); //utworzenie obiektu DateTime z datą ustawioną na tą pobraną z bazy danych
+            echo $date->format('jS F Y'); //przeformatowanie daty aby wygladala na 4th August 1997
+        ?> 
         <a href="editjoke.php?id=<?=$joke['id']?>">Edytuj</a>
         
         <form action="deletejoke.php" method="POST">

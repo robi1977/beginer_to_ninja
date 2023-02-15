@@ -38,7 +38,7 @@ function insertJoke($pdo, $values)
     //powyższe zapytanie ma trochę inną konstrukcję niż zapytanie w updateJoke
     //sprawdzenie czy ktorys z wpisow jest typu DataTime i przeformatowanie go
     $values = datesFormats($values);
-    
+
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
@@ -75,7 +75,7 @@ function deleteJoke($pdo, $id)
 
 function allJokes($pdo)
 {
-    $stsm = $pdo->prepare('SELECT `joke`.`id`, `joketext`, `name`, `email` FROM `joke` 
+    $stsm = $pdo->prepare('SELECT `joke`.`id`, `joketext`, `jokedate`, `name`, `email` FROM `joke` 
         INNER JOIN `author` ON `authorid` = `author`.`id`');
     $stsm->execute();
 
