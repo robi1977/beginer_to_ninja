@@ -35,19 +35,21 @@ function insertJoke($pdo, $joketext, $authorId)
     $stsm->execute($values);
 }
 
-function updateJoke($pdo, $jokeId, $joketext, $authorId)
+function updateJoke($pdo, $values)
 {
-    $stsm = $pdo->prepare('UPDATE `joke` SET 
-        `authorId` = :authorId,
-        `joketext` = :joketext 
-        WHERE `id` = :id');
-    
-    $values = [
-        'id' => $jokeId,
-        'joketext' => $joketext,
-        'authorId' => $authorId
-    ];
+    //tworzenie treści zapytania
+    $query = 'UPDATE `joke` SET ';
+    $updateFields = [];
+    foreach($values as $key => $value) {
+        $updateFields[] = '`'.$key.'` = :'.$key;
+    }
 
+    $query .= implode(', ', $updateFields);
+    $query .= ' WHERE `id` = :primaryKey';
+    //dopisanie primaryKey do tablicy. Zastosowano zmienną primaryKey ponieważ w zapytaniu nie może być użyte 2 raz odwołanie do zmiennej id
+    $values['primaryKey'] = $values['id'];
+
+    $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
 
