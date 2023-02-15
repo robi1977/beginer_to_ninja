@@ -92,3 +92,34 @@ function datesFormats($values)
 
     return $values;
 }
+
+//CRUD dla tabeli author
+function allAuthors($pdo) 
+{
+    $stsm = $pdo->prepare('SELECT * FROM `author`');
+    $stsm->execute();
+    return $stsm->fetchAll();
+}
+function deleteAuthor($pdo, $id)
+{
+    $values = [':id' => $id];
+    $stsm = $pdo->prepare('DELETE FROM `author` WHERE `id` = :id');
+    $stsm->execute($values);
+}
+function insertAuthor($pdo, $values)
+{
+    $query = 'INSERT INTO `author` (';
+    foreach($values as $key => $value){
+        $query .= '`'.$key.'`,';
+    }
+    $query = rtrim($query, ',');
+    $query .= ') VALUES (';
+    foreach($values as $key => $value){
+        $query .=':'.$key.',';
+    }
+    $query = rtrim($query, ',');
+    $query .=')';
+    $values = datesFormats($values);
+    $stsm = $pdo->prepare($query);
+    $stsm->execute($values);
+}
