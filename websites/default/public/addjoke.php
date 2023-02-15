@@ -3,7 +3,7 @@ if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
     try {
         include __DIR__.'/../includes/DatabaseConnection.php';
         include __DIR__.'/../includes/DatabaseFunctions.php';
-        
+
         insert($pdo, 'joke', [
             'authorId' => 1,
             'joketext' => $_POST['joketext'],
