@@ -123,3 +123,15 @@ function insertAuthor($pdo, $values)
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
+function findAll($pdo, $table)
+{
+    $stsm = $pdo->prepare('SELECT * FROM `'.$table.'`');
+    $stsm->execute();
+    return $stsm->fetchAll();
+}
+function delete($pdo, $table, $id)
+{
+    $values = [':id' => $id];
+    $stsm = $pdo->prepare('DELETE FROM `'.$table.'` WHERE `id`= :id');
+    $stsm->execute($values);
+}
