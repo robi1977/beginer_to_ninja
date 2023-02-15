@@ -5,10 +5,22 @@ try {
     include __DIR__.'/../includes/DatabaseConnection.php';
     include __DIR__.'/../includes/DatabaseFunctions.php';
 
-    $jokes = allJokes($pdo);
+    $results = findAll($pdo, 'joke'); //wczytanie wszystkich dowcipow
+    $jokes = [];
+    foreach($results as $joke) {
+        $author = find($pdo, 'author', 'id', $joke['authorid'])[0];
+
+        $jokes[] = [
+            'id' => $joke['id'],
+            'joketext' => $joke['joketext'],
+            'jokedate' => $joke['jokedate'],
+            'name' => $author['name'],
+            'email' => $author['email']
+        ];
+    }
     
     $title = 'Lista dowcipów';
-    $totalJokes = totalJokes($pdo);
+    $totalJokes = total($pdo, 'joke');
 
     ob_start(); //otwarcie bufora
     include __DIR__.'/../templates/jokes.html.php'; //wczytanie konstrukcji html z pliku tworzącego listę dowcipów
