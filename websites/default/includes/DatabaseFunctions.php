@@ -31,12 +31,12 @@ function insertJoke($pdo, $values)
     $query = rtrim($query, ','); //usuniecie ostatniego przecinka pochodzacego z dzialania petli foreach
     $query .= ') VALUES (';
     foreach($values as $key => $value) {
-        $query .= ':'.$key.', ';
+        $query .= ':'.$key.',';
     }
     $query = rtrim($query, ','); //j.w.
     $query .=')'; 
     //powyższe zapytanie ma trochę inną konstrukcję niż zapytanie w updateJoke
-
+    //var_dump($query);
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
 }
