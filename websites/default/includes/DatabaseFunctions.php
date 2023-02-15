@@ -135,3 +135,35 @@ function delete($pdo, $table, $field, $value)
     $stsm = $pdo->prepare('DELETE FROM `'.$table.'` WHERE `'.$field.'`= :value');
     $stsm->execute($values);
 }
+function insert($pdo, $table, $values)
+{
+    $query = 'INSERT INTO `'.$table.'` (';
+    foreach($values as $key=>$value) {
+        $query .='`'.$key.'`,';
+    }
+    $query = rtrim($query, ',');
+    $query .=') VALUES (';
+    foreach($values as $key=>$value) {
+        $query .=':'.$key.',';
+    }
+    $query = rtrim($query, ',');
+    $query = rtrim($query, ',');
+    $query .=')';
+    $values = datesFormats($values);
+    $stsm = $pdo->prepare($query);
+    $stsm->execute($values);
+}
+function update($pdo, $table, $primaryKey, $values)
+{
+    $query = 'UPDATE `'.$table.'` SET ';
+    foreach ($values as $key => $value) {
+        $query .= '`'.$key.'` = :'.$key.',';
+    }
+    $query = rtrim($query, ',');
+    $query .= ' WHERE `'.$primaryKey.'` = :primaryKey';
+    $values['primaryKey'] = $values['id'];
+    $values = datesFormats($values);
+
+    $stsm = $pdo->prepare($query);
+    $stsm->execute($values);
+}
