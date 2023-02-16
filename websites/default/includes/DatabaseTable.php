@@ -2,9 +2,9 @@
 
 class DatabaseTable 
 {
-public $pdo;
-public $table;
-public $primaryKey;
+private $pdo;
+private $table;
+private $primaryKey;
 
 public function __construct(PDO $pdo, string $table, string $primaryKey)
 {
