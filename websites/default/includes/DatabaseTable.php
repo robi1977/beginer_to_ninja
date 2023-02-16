@@ -14,8 +14,6 @@ private function datesFormats($values)
 
     return $values;
 }
-
-
 public function findAll($pdo, $table)
 {
     $stsm = $pdo->prepare('SELECT * FROM `'.$table.'`');
@@ -42,7 +40,7 @@ private function insert($pdo, $table, $values)
     $query = rtrim($query, ',');
     $query .=')';
  
-    $values = datesFormats($values);
+    $values = $this->datesFormats($values);
 
     
     $stsm = $pdo->prepare($query);
@@ -58,7 +56,7 @@ private function update($pdo, $table, $primaryKey, $values)
     $query = rtrim($query, ',');
     $query .= ' WHERE `'.$primaryKey.'` = :primaryKey';
     $values['primaryKey'] = $values['id'];
-    $values = datesFormats($values);
+    $values = $this->datesFormats($values);
 
     $stsm = $pdo->prepare($query);
     $stsm->execute($values);
@@ -98,9 +96,9 @@ function save($pdo, $table, $primaryKey, $record)
         if (empty($record[$primaryKey])) {
             unset($record[$primaryKey]); //usunięcie wpisu $primaryKey jezeli jest pusty, żeby nie było próby wpisania duplikujących się wpisów
         }
-        insert($pdo, $table, $record);
+        $this->insert($pdo, $table, $record);
     } catch (PDOException $e) {
-        update($pdo, $table, $primaryKey, $record);
+        $this->update($pdo, $table, $primaryKey, $record);
     }
 }
 }
