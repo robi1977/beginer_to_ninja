@@ -6,6 +6,13 @@ public $pdo;
 public $table;
 public $primaryKey;
 
+public function __construct($pdo, $table, $primaryKey)
+{
+    $this->pdo = $pdo;
+    $this->table = $table;
+    $this->primaryKey = $primaryKey;
+}
+
 private function datesFormats($values)
 {
     foreach($values as $key => $value) {
