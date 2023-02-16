@@ -1,7 +1,9 @@
 <?php
 try {
     include __DIR__.'/../includes/DatabaseConnection.php';
-    include __DIR__.'/../includes/DatabaseFunctions.php';
+    include __DIR__.'/../includes/DatabaseTable.php';
+    
+    $jokesTable = new DatabaseTable($pdo, 'joke', 'id');
 
     if (isset($_POST['joke'])) {
         //utworzenie tablicy $joke z danymi z formularza oraz dodatkowymi danymi
@@ -10,12 +12,12 @@ try {
         $joke['authorId'] = 1;
         $joke['jokedate'] = new DateTime();
 
-        save($pdo, 'joke', 'id', $joke);
+        $jokesTable->save($joke);
 
         header('location: jokes.php');
     } else {
         if (isset($_GET['id'])) {
-            $joke = find($pdo, 'joke','id', $_GET['id'])[0] ?? null;
+            $joke = $jokesTable->find('id', $_GET['id'])[0] ?? null;
         } else {
             $joke = null;
         }
