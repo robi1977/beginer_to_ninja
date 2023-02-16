@@ -18,9 +18,9 @@ private function datesFormats($values)
 
     return $values;
 }
-public function findAll($pdo, $table)
+public function findAll()
 {
-    $stsm = $pdo->prepare('SELECT * FROM `'.$table.'`');
+    $stsm = $this->pdo->prepare('SELECT * FROM `'.$this->table.'`');
     $stsm->execute();
     return $stsm->fetchAll();
 }
@@ -75,20 +75,20 @@ public function findById($pdo, $table, $primaryKey, $value)
     $stsm->execute($values);
     return $stsm->fetch(); //UWAGA: zwraca pojedyńczy wpis
 }
-public function find($pdo, $table, $field, $value)
+public function find($field, $value)
 {
-    $query = 'SELECT * FROM `'.$table.'` WHERE `'.$field.'` = :value';
+    $query = 'SELECT * FROM `'.$this->table.'` WHERE `'.$field.'` = :value';
     $values = [
         'value' => $value
     ];
-    $stsm = $pdo->prepare($query);
+    $stsm = $this->pdo->prepare($query);
     $stsm->execute($values);
 
     return $stsm->fetchAll(); //UWAGA: zwraca tablicę
 }
-public function total($pdo, $table)
+public function total()
 {
-    $stsm = $pdo->prepare('SELECT COUNT(*) FROM `'.$table.'`');
+    $stsm = $this->pdo->prepare('SELECT COUNT(*) FROM `'.$this->table.'`');
     $stsm->execute();
     $row = $stsm->fetch();
 
