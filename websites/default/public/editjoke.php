@@ -3,13 +3,14 @@ try {
     include __DIR__.'/../includes/DatabaseConnection.php';
     include __DIR__.'/../includes/DatabaseFunctions.php';
 
-    if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
-        save($pdo, 'joke', 'id', [
-            'id' => $_POST['jokeid'],
-            'joketext' => $_POST['joketext'],
-            'jokedate' => new DateTime(),
-            'authorId' => 1
-        ]);
+    if (isset($_POST['joke'])) {
+        //utworzenie tablicy $joke z danymi z formularza oraz dodatkowymi danymi
+        //$_POST['joke'] zawiera tablice wartości przesłanych z folmularza przez name="joke[id]" oraz name="joke[joketext]" 
+        $joke = $_POST['joke'];
+        $joke['authorId'] = 1;
+        $joke['jokedate'] = new DateTime();
+
+        save($pdo, 'joke', 'id', $joke);
 
         header('location: jokes.php');
     } else {
