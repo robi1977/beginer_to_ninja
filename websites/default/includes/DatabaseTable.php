@@ -24,15 +24,15 @@ public function findAll()
     $stsm->execute();
     return $stsm->fetchAll();
 }
-public function delete($pdo, $table, $field, $value)
+public function delete( $field, $value)
 {
     $values = [':value' => $value];
-    $stsm = $pdo->prepare('DELETE FROM `'.$table.'` WHERE `'.$field.'`= :value');
+    $stsm = $this->pdo->prepare('DELETE FROM `'.$this->table.'` WHERE `'.$field.'`= :value');
     $stsm->execute($values);
 }
-private function insert($pdo, $table, $values)
+private function insert($values)
 {
-    $query = 'INSERT INTO `'.$table.'` (';
+    $query = 'INSERT INTO `'.$this->table.'` (';
     foreach($values as $key=>$value) {
         $query .='`'.$key.'`,';
     }
@@ -47,7 +47,7 @@ private function insert($pdo, $table, $values)
     $values = $this->datesFormats($values);
 
     
-    $stsm = $pdo->prepare($query);
+    $stsm = $this->pdo->prepare($query);
     $stsm->execute($values);
 
 }
