@@ -94,15 +94,15 @@ public function total()
 
     return $row[0]; //zwrot wartości jako skalara
 }
-function save($pdo, $table, $primaryKey, $record)
+function save($record)
 {
     try {
-        if (empty($record[$primaryKey])) {
-            unset($record[$primaryKey]); //usunięcie wpisu $primaryKey jezeli jest pusty, żeby nie było próby wpisania duplikujących się wpisów
+        if (empty($record[$this->primaryKey])) {
+            unset($record[$this->primaryKey]); //usunięcie wpisu $primaryKey jezeli jest pusty, żeby nie było próby wpisania duplikujących się wpisów
         }
-        $this->insert($pdo, $table, $record);
+        $this->insert($record);
     } catch (PDOException $e) {
-        $this->update($pdo, $table, $primaryKey, $record);
+        $this->update($record);
     }
 }
 }
