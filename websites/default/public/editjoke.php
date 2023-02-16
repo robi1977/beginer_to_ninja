@@ -3,10 +3,11 @@ try {
     include __DIR__.'/../includes/DatabaseConnection.php';
     include __DIR__.'/../includes/DatabaseFunctions.php';
 
-    if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0 && $_POST['id'] != '') {
-        update($pdo, 'joke', 'id', [
+    if (isset($_POST['joketext']) && strlen($_POST['joketext'])>0) {
+        save($pdo, 'joke', 'id', [
             'id' => $_POST['jokeid'],
             'joketext' => $_POST['joketext'],
+            'jokedate' => new DataTime(),
             'authorId' => 1
         ]);
 
