@@ -10,12 +10,12 @@ class JokeController
     public function list()
     {
         $result = $this->jokesTable->findAll();
-
+    
         $jokes = [];
         foreach($result as $joke) {
             $author = $this->authorsTable->find('id', $joke['authorid'])[0];
 
-            $jokes = [
+            $jokes []= [
                 'id' => $joke['id'],
                 'joketext' => $joke['joketext'],
                 'jokedate' => $joke['jokedate'],
@@ -24,7 +24,7 @@ class JokeController
             ];
         }
         $title = "Lista dowcipów";
-        $totalJokes = $this->jokesTables->total();
+        $totalJokes = $this->jokesTable->total();
 
         ob_start(); //otwarcie bufora
         include __DIR__.'/../templates/jokes.html.php'; //wczytanie konstrukcji html z pliku tworzącego listę dowcipów
