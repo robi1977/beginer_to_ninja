@@ -2,15 +2,9 @@
 
 class DatabaseTable 
 {
-private $pdo;
-private $table;
-private $primaryKey;
 
-public function __construct(PDO $pdo, string $table, string $primaryKey)
+public function __construct(private PDO $pdo, private string $table, private string $primaryKey)
 {
-    $this->pdo = $pdo;
-    $this->table = $table;
-    $this->primaryKey = $primaryKey;
 }
 
 private function datesFormats($values)
