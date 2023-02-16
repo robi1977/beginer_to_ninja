@@ -51,18 +51,18 @@ private function insert($pdo, $table, $values)
     $stsm->execute($values);
 
 }
-private function update($pdo, $table, $primaryKey, $values)
+private function update($values)
 {
-    $query = 'UPDATE `'.$table.'` SET ';
+    $query = 'UPDATE `'.$this->table.'` SET ';
     foreach ($values as $key => $value) {
         $query .= '`'.$key.'` = :'.$key.',';
     }
     $query = rtrim($query, ',');
-    $query .= ' WHERE `'.$primaryKey.'` = :primaryKey';
+    $query .= ' WHERE `'.$this->primaryKey.'` = :primaryKey';
     $values['primaryKey'] = $values['id'];
     $values = $this->datesFormats($values);
 
-    $stsm = $pdo->prepare($query);
+    $stsm = $this->pdo->prepare($query);
     $stsm->execute($values);
 }
 public function findById($pdo, $table, $primaryKey, $value)
