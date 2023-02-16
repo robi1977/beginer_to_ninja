@@ -67,11 +67,11 @@ private function update($values)
 }
 public function findById($pdo, $table, $primaryKey, $value)
 {
-    $stsm = 'SELECT * FROM `'.$table.'` WHERE `'.$primaryKey.'` = :value';
+    $stsm = 'SELECT * FROM `'.$this->table.'` WHERE `'.$this->primaryKey.'` = :value';
     $values = [
         'value' => $value
     ];
-    $stsm = $pdo->preprare($query);
+    $stsm = $this->pdo->preprare($query);
     $stsm->execute($values);
     return $stsm->fetch(); //UWAGA: zwraca pojedyńczy wpis
 }
