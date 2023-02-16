@@ -3,12 +3,16 @@
 try {
     
     include __DIR__.'/../includes/DatabaseConnection.php';
-    include __DIR__.'/../includes/DatabaseFunctions.php';
+    include __DIR__.'/../includes/DatabaseTable.php';
 
-    $results = findAll($pdo, 'joke'); //wczytanie wszystkich dowcipow
+    $jokesTable = new DatabaseTable($pdo, 'joke', 'id');
+    $authorsTable = new DatabaseTable($pdo, 'author', 'id');
+
+    $results = $jokesTable->findAll(); //wczytanie wszystkich dowcipow z zastosowaniem metody "findAll" klasy "DatabaseTable" ustawionej na tabele 'joke'
+
     $jokes = [];
     foreach($results as $joke) {
-        $author = find($pdo, 'author', 'id', $joke['authorid'])[0];
+        $author = $authorsTable->find('id', $joke['authorid'])[0];
 
         $jokes[] = [
             'id' => $joke['id'],
@@ -20,7 +24,7 @@ try {
     }
     
     $title = 'Lista dowcipów';
-    $totalJokes = total($pdo, 'joke');
+    $totalJokes = $jokesTable->total();
 
     ob_start(); //otwarcie bufora
     include __DIR__.'/../templates/jokes.html.php'; //wczytanie konstrukcji html z pliku tworzącego listę dowcipów
