@@ -121,7 +121,7 @@ function save($pdo, $table, $primaryKey, $record)
             unset($record[$primaryKey]); //usunięcie wpisu $primaryKey jezeli jest pusty, żeby nie było próby wpisania duplikujących się wpisów
         }
         insert($pdo, $table, $record);
-    } catch (PDOExeption $e) {
+    } catch (PDOException $e) {
         update($pdo, $table, $primaryKey, $record);
     }
 }

@@ -7,7 +7,7 @@ try {
         save($pdo, 'joke', 'id', [
             'id' => $_POST['jokeid'],
             'joketext' => $_POST['joketext'],
-            'jokedate' => new DataTime(),
+            'jokedate' => new DateTime(),
             'authorId' => 1
         ]);
 
