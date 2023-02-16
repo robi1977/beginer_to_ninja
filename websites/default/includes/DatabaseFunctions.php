@@ -114,3 +114,14 @@ function total($pdo, $table)
 
     return $row[0]; //zwrot wartości jako skalara
 }
+function save($pdo, $table, $primaryKey, $record)
+{
+    try {
+        if (empty($record[$primaryKey])) {
+            unset($record[$primaryKey]); //usunięcie wpisu $primaryKey jezeli jest pusty, żeby nie było próby wpisania duplikujących się wpisów
+        }
+        insert($pdo, $table, $record);
+    } catch (PDOExeption $e) {
+        update($pdo, $table, $primaryKey, $record);
+    }
+}
