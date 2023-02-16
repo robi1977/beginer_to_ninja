@@ -65,7 +65,7 @@ private function update($values)
     $stsm = $this->pdo->prepare($query);
     $stsm->execute($values);
 }
-public function findById($pdo, $table, $primaryKey, $value)
+public function findById($value)
 {
     $stsm = 'SELECT * FROM `'.$this->table.'` WHERE `'.$this->primaryKey.'` = :value';
     $values = [
