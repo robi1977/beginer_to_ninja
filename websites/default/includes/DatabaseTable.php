@@ -2,6 +2,10 @@
 
 class DatabaseTable 
 {
+public $pdo;
+public $table;
+public $primaryKey;
+
 private function datesFormats($values)
 {
     foreach($values as $key => $value) {
