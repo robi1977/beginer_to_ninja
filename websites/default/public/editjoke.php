@@ -14,7 +14,7 @@ try {
 
         $jokesTable->save($joke);
 
-        header('location: jokes.php');
+        header('location: index.php?action=list');
     } else {
         if (isset($_GET['id'])) {
             $joke = $jokesTable->find('id', $_GET['id'])[0] ?? null;
