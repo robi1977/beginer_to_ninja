@@ -84,7 +84,7 @@ CREATE TABLE `joke` (
   `jokedate` date DEFAULT NULL,
   `authorid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `joke` (
 
 LOCK TABLES `joke` WRITE;
 /*!40000 ALTER TABLE `joke` DISABLE KEYS */;
-INSERT INTO `joke` VALUES (1,'        Stał facet obok betoniarki i się zmieszał. i to by było na tyle      ','2023-02-16',1),(2,'Robiła babcia na drutach, przejechał tramwaj i spadła.','2022-12-22',2),(3,'        Masochista prosi sadyste: uderz mnie, a sadysta na to: chciałbyś prawda?    ','2022-12-23',1),(4,'Poszla baba po mleko i dostala z banki.','2022-12-23',1),(5,'Szedl krawiec ulica i zaszyl sie w ciemnosciach.','2022-12-24',1),(6,'Szedl facet obok koparki i dal sie nabrac.','2022-12-30',2),(7,'Wstaje koles rano, pelno krwi na dywanie - patrzy: a tam ranne pantofle.','2023-01-02',2),(8,'Facet budzi sie rano - slyszy hala za oknem - patrzy: a tam temperatura spada.','2023-01-02',1);
+INSERT INTO `joke` VALUES (1,'        Stał facet obok betoniarki i się zmieszał. i to by było na tyle      ','2023-02-16',1),(2,'Robiła babcia na drutach, przejechał tramwaj i spadła.','2022-12-22',2),(3,'Masochista prosi sadystę: uderz mnie, a sadysta na to: chciałbyś prawda?        ','2023-02-17',1),(4,'Poszla baba po mleko i dostala z banki.','2022-12-23',1),(5,'Szedl krawiec ulica i zaszyl sie w ciemnosciach.','2022-12-24',1),(6,'Szedl facet obok koparki i dal sie nabrac.','2022-12-30',2),(7,'Wstaje koles rano, pelno krwi na dywanie - patrzy: a tam ranne pantofle.','2023-01-02',2),(8,'Facet budzi się rano - słyszy hala za oknem - patrzy: a tam temperatura spada.    ','2023-02-17',1);
 /*!40000 ALTER TABLE `joke` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -502,7 +502,7 @@ CREATE TABLE `innodb_index_stats` (
 
 LOCK TABLES `innodb_index_stats` WRITE;
 /*!40000 ALTER TABLE `innodb_index_stats` DISABLE KEYS */;
-INSERT INTO `innodb_index_stats` VALUES ('ijdb','author','PRIMARY','2023-02-14 10:20:17','n_diff_pfx01',2,1,'id'),('ijdb','author','PRIMARY','2023-02-14 10:20:17','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','author','PRIMARY','2023-02-14 10:20:17','size',1,NULL,'Number of pages in the index'),('ijdb','category','PRIMARY','2023-02-14 10:42:27','n_diff_pfx01',0,1,'id'),('ijdb','category','PRIMARY','2023-02-14 10:42:27','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','category','PRIMARY','2023-02-14 10:42:27','size',1,NULL,'Number of pages in the index'),('ijdb','joke','PRIMARY','2023-02-15 14:51:30','n_diff_pfx01',9,1,'id'),('ijdb','joke','PRIMARY','2023-02-15 14:51:30','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','joke','PRIMARY','2023-02-15 14:51:30','size',1,NULL,'Number of pages in the index'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','n_diff_pfx01',0,1,'jokeid'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','n_diff_pfx02',0,1,'jokeid,categoryid'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','size',1,NULL,'Number of pages in the index'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','n_diff_pfx01',0,1,'domain_id'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','n_diff_pfx02',0,1,'domain_id,sub_id'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','size',1,NULL,'Number of pages in the index');
+INSERT INTO `innodb_index_stats` VALUES ('ijdb','author','PRIMARY','2023-02-14 10:20:17','n_diff_pfx01',2,1,'id'),('ijdb','author','PRIMARY','2023-02-14 10:20:17','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','author','PRIMARY','2023-02-14 10:20:17','size',1,NULL,'Number of pages in the index'),('ijdb','category','PRIMARY','2023-02-14 10:42:27','n_diff_pfx01',0,1,'id'),('ijdb','category','PRIMARY','2023-02-14 10:42:27','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','category','PRIMARY','2023-02-14 10:42:27','size',1,NULL,'Number of pages in the index'),('ijdb','joke','PRIMARY','2023-02-17 18:03:25','n_diff_pfx01',8,1,'id'),('ijdb','joke','PRIMARY','2023-02-17 18:03:25','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','joke','PRIMARY','2023-02-17 18:03:25','size',1,NULL,'Number of pages in the index'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','n_diff_pfx01',0,1,'jokeid'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','n_diff_pfx02',0,1,'jokeid,categoryid'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('ijdb','jokecategory','PRIMARY','2023-02-14 10:45:48','size',1,NULL,'Number of pages in the index'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','n_diff_pfx01',0,1,'domain_id'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','n_diff_pfx02',0,1,'domain_id,sub_id'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','gtid_slave_pos','PRIMARY','2023-01-31 18:07:03','size',1,NULL,'Number of pages in the index');
 /*!40000 ALTER TABLE `innodb_index_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -530,7 +530,7 @@ CREATE TABLE `innodb_table_stats` (
 
 LOCK TABLES `innodb_table_stats` WRITE;
 /*!40000 ALTER TABLE `innodb_table_stats` DISABLE KEYS */;
-INSERT INTO `innodb_table_stats` VALUES ('ijdb','author','2023-02-14 10:20:17',2,1,0),('ijdb','category','2023-02-14 10:42:27',0,1,0),('ijdb','joke','2023-02-15 14:51:30',9,1,0),('ijdb','jokecategory','2023-02-14 10:45:48',0,1,0),('mysql','gtid_slave_pos','2023-01-31 18:07:03',0,1,0);
+INSERT INTO `innodb_table_stats` VALUES ('ijdb','author','2023-02-14 10:20:17',2,1,0),('ijdb','category','2023-02-14 10:42:27',0,1,0),('ijdb','joke','2023-02-17 18:03:25',8,1,0),('ijdb','jokecategory','2023-02-14 10:45:48',0,1,0),('mysql','gtid_slave_pos','2023-01-31 18:07:03',0,1,0);
 /*!40000 ALTER TABLE `innodb_table_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4202,4 +4202,4 @@ USE `sys`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-16 15:18:38
+-- Dump completed on 2023-02-17 18:10:52
