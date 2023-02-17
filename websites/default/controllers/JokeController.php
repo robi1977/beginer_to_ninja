@@ -24,23 +24,20 @@ class JokeController
             ];
         }
         $title = "Lista dowcipów";
+
         $totalJokes = $this->jokesTable->total();
 
-        ob_start(); //otwarcie bufora
-        include __DIR__.'/../templates/jokes.html.php'; //wczytanie konstrukcji html z pliku tworzącego listę dowcipów
-        $output = ob_get_clean(); //przeniesienie bufora do zmiennej i wyczyszczenie go
-
-        return ['output'=>$output, 'title'=>$title];
+        return ['template'=>'jokes.html.php', 'title'=>$title, 'variables'=>[
+            'totalJokes'=>$totalJokes,
+            'jokes'=>$jokes
+        ]];
     }
 
     public function home()
     {
         $title = 'Internetowa baza dowcipów';
-        ob_start();
-        include __DIR__.'/../templates/home.html.php';
-        $output = ob_get_clean();
-
-        return ['output'=>$output, 'title'=>$title];
+        
+        return ['template'=>'home.html.php', 'title'=>$title];
     }
 
     public function delete()
@@ -59,7 +56,7 @@ class JokeController
 
             $this->jokesTable->save($joke);
 
-            header('location: index.php=action=list');
+            header('location: index.php?action=list');
         } else {
             if (isset($_GET['id'])) {
                 $joke = $this->jokesTable->find('id', $_GET['id'])[0] ?? null;
@@ -70,11 +67,9 @@ class JokeController
 
             $title = 'Edytuj dowcip';
             
-            ob_start();
-                include __DIR__.'/../templates/editjoke.html.php';
-            $output = ob_get_clean();
+            return ['template'=>'editjoke.html.php', 'title'=>$title, 'variables'=>[
+                'joke'=>$joke
+            ]];
         }
-
-        return ['output'=>$output, 'title'=>$title];
     }
 }
