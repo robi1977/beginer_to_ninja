@@ -14,8 +14,8 @@
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="jokes.php">Lista</a></li>
-            <li><a href="editjoke.php">Dodaj nowy</a></li>
+            <li><a href="index.php?action=list">Lista</a></li>
+            <li><a href="index.php?action=edit">Dodaj nowy</a></li>
         </ul>
     </nav>
     <main>

@@ -93,7 +93,7 @@ CREATE TABLE `joke` (
 
 LOCK TABLES `joke` WRITE;
 /*!40000 ALTER TABLE `joke` DISABLE KEYS */;
-INSERT INTO `joke` VALUES (1,'                        Stał facet obok betoniarki i się zmieszał.            ','2023-01-01',1),(2,'Robiła babcia na drutach, przejechał tramwaj i spadła.','2022-12-22',2),(3,'        Masochista prosi sadyste: uderz mnie, a sadysta na to: chciałbyś prawda?    ','2022-12-23',1),(4,'Poszla baba po mleko i dostala z banki.','2022-12-23',1),(5,'Szedl krawiec ulica i zaszyl sie w ciemnosciach.','2022-12-24',1),(6,'Szedl facet obok koparki i dal sie nabrac.','2022-12-30',2),(7,'Wstaje koles rano, pelno krwi na dywanie - patrzy: a tam ranne pantofle.','2023-01-02',2),(8,'Facet budzi sie rano - slyszy hala za oknem - patrzy: a tam temperatura spada.','2023-01-02',1);
+INSERT INTO `joke` VALUES (1,'        Stał facet obok betoniarki i się zmieszał. i to by było na tyle      ','2023-02-16',1),(2,'Robiła babcia na drutach, przejechał tramwaj i spadła.','2022-12-22',2),(3,'        Masochista prosi sadyste: uderz mnie, a sadysta na to: chciałbyś prawda?    ','2022-12-23',1),(4,'Poszla baba po mleko i dostala z banki.','2022-12-23',1),(5,'Szedl krawiec ulica i zaszyl sie w ciemnosciach.','2022-12-24',1),(6,'Szedl facet obok koparki i dal sie nabrac.','2022-12-30',2),(7,'Wstaje koles rano, pelno krwi na dywanie - patrzy: a tam ranne pantofle.','2023-01-02',2),(8,'Facet budzi sie rano - slyszy hala za oknem - patrzy: a tam temperatura spada.','2023-01-02',1);
 /*!40000 ALTER TABLE `joke` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -894,63 +894,71 @@ INSERT INTO `time_zone_transition_type` VALUES (1,0,-968,0,'LMT'),(1,1,0,0,'GMT'
 UNLOCK TABLES;
 
 --
--- Temporary table structure for view `user`
+-- Table structure for table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
-/*!50001 DROP VIEW IF EXISTS `user`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user` (
-  `Host` tinyint NOT NULL,
-  `User` tinyint NOT NULL,
-  `Password` tinyint NOT NULL,
-  `Select_priv` tinyint NOT NULL,
-  `Insert_priv` tinyint NOT NULL,
-  `Update_priv` tinyint NOT NULL,
-  `Delete_priv` tinyint NOT NULL,
-  `Create_priv` tinyint NOT NULL,
-  `Drop_priv` tinyint NOT NULL,
-  `Reload_priv` tinyint NOT NULL,
-  `Shutdown_priv` tinyint NOT NULL,
-  `Process_priv` tinyint NOT NULL,
-  `File_priv` tinyint NOT NULL,
-  `Grant_priv` tinyint NOT NULL,
-  `References_priv` tinyint NOT NULL,
-  `Index_priv` tinyint NOT NULL,
-  `Alter_priv` tinyint NOT NULL,
-  `Show_db_priv` tinyint NOT NULL,
-  `Super_priv` tinyint NOT NULL,
-  `Create_tmp_table_priv` tinyint NOT NULL,
-  `Lock_tables_priv` tinyint NOT NULL,
-  `Execute_priv` tinyint NOT NULL,
-  `Repl_slave_priv` tinyint NOT NULL,
-  `Repl_client_priv` tinyint NOT NULL,
-  `Create_view_priv` tinyint NOT NULL,
-  `Show_view_priv` tinyint NOT NULL,
-  `Create_routine_priv` tinyint NOT NULL,
-  `Alter_routine_priv` tinyint NOT NULL,
-  `Create_user_priv` tinyint NOT NULL,
-  `Event_priv` tinyint NOT NULL,
-  `Trigger_priv` tinyint NOT NULL,
-  `Create_tablespace_priv` tinyint NOT NULL,
-  `Delete_history_priv` tinyint NOT NULL,
-  `ssl_type` tinyint NOT NULL,
-  `ssl_cipher` tinyint NOT NULL,
-  `x509_issuer` tinyint NOT NULL,
-  `x509_subject` tinyint NOT NULL,
-  `max_questions` tinyint NOT NULL,
-  `max_updates` tinyint NOT NULL,
-  `max_connections` tinyint NOT NULL,
-  `max_user_connections` tinyint NOT NULL,
-  `plugin` tinyint NOT NULL,
-  `authentication_string` tinyint NOT NULL,
-  `password_expired` tinyint NOT NULL,
-  `is_role` tinyint NOT NULL,
-  `default_role` tinyint NOT NULL,
-  `max_statement_time` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `Host` tinyint(4) NOT NULL,
+  `User` tinyint(4) NOT NULL,
+  `Password` tinyint(4) NOT NULL,
+  `Select_priv` tinyint(4) NOT NULL,
+  `Insert_priv` tinyint(4) NOT NULL,
+  `Update_priv` tinyint(4) NOT NULL,
+  `Delete_priv` tinyint(4) NOT NULL,
+  `Create_priv` tinyint(4) NOT NULL,
+  `Drop_priv` tinyint(4) NOT NULL,
+  `Reload_priv` tinyint(4) NOT NULL,
+  `Shutdown_priv` tinyint(4) NOT NULL,
+  `Process_priv` tinyint(4) NOT NULL,
+  `File_priv` tinyint(4) NOT NULL,
+  `Grant_priv` tinyint(4) NOT NULL,
+  `References_priv` tinyint(4) NOT NULL,
+  `Index_priv` tinyint(4) NOT NULL,
+  `Alter_priv` tinyint(4) NOT NULL,
+  `Show_db_priv` tinyint(4) NOT NULL,
+  `Super_priv` tinyint(4) NOT NULL,
+  `Create_tmp_table_priv` tinyint(4) NOT NULL,
+  `Lock_tables_priv` tinyint(4) NOT NULL,
+  `Execute_priv` tinyint(4) NOT NULL,
+  `Repl_slave_priv` tinyint(4) NOT NULL,
+  `Repl_client_priv` tinyint(4) NOT NULL,
+  `Create_view_priv` tinyint(4) NOT NULL,
+  `Show_view_priv` tinyint(4) NOT NULL,
+  `Create_routine_priv` tinyint(4) NOT NULL,
+  `Alter_routine_priv` tinyint(4) NOT NULL,
+  `Create_user_priv` tinyint(4) NOT NULL,
+  `Event_priv` tinyint(4) NOT NULL,
+  `Trigger_priv` tinyint(4) NOT NULL,
+  `Create_tablespace_priv` tinyint(4) NOT NULL,
+  `Delete_history_priv` tinyint(4) NOT NULL,
+  `ssl_type` tinyint(4) NOT NULL,
+  `ssl_cipher` tinyint(4) NOT NULL,
+  `x509_issuer` tinyint(4) NOT NULL,
+  `x509_subject` tinyint(4) NOT NULL,
+  `max_questions` tinyint(4) NOT NULL,
+  `max_updates` tinyint(4) NOT NULL,
+  `max_connections` tinyint(4) NOT NULL,
+  `max_user_connections` tinyint(4) NOT NULL,
+  `plugin` tinyint(4) NOT NULL,
+  `authentication_string` tinyint(4) NOT NULL,
+  `password_expired` tinyint(4) NOT NULL,
+  `is_role` tinyint(4) NOT NULL,
+  `default_role` tinyint(4) NOT NULL,
+  `max_statement_time` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `general_log`
@@ -1019,910 +1027,1230 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `sys` /*!40100 DEFAULT CHARACTER SET ut
 USE `sys`;
 
 --
--- Temporary table structure for view `host_summary`
+-- Table structure for table `host_summary`
 --
 
 DROP TABLE IF EXISTS `host_summary`;
-/*!50001 DROP VIEW IF EXISTS `host_summary`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `host_summary` (
-  `host` tinyint NOT NULL,
-  `statements` tinyint NOT NULL,
-  `statement_latency` tinyint NOT NULL,
-  `statement_avg_latency` tinyint NOT NULL,
-  `table_scans` tinyint NOT NULL,
-  `file_ios` tinyint NOT NULL,
-  `file_io_latency` tinyint NOT NULL,
-  `current_connections` tinyint NOT NULL,
-  `total_connections` tinyint NOT NULL,
-  `unique_users` tinyint NOT NULL,
-  `current_memory` tinyint NOT NULL,
-  `total_memory_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `host_summary` (
+  `host` tinyint(4) NOT NULL,
+  `statements` tinyint(4) NOT NULL,
+  `statement_latency` tinyint(4) NOT NULL,
+  `statement_avg_latency` tinyint(4) NOT NULL,
+  `table_scans` tinyint(4) NOT NULL,
+  `file_ios` tinyint(4) NOT NULL,
+  `file_io_latency` tinyint(4) NOT NULL,
+  `current_connections` tinyint(4) NOT NULL,
+  `total_connections` tinyint(4) NOT NULL,
+  `unique_users` tinyint(4) NOT NULL,
+  `current_memory` tinyint(4) NOT NULL,
+  `total_memory_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `host_summary_by_file_io`
+-- Dumping data for table `host_summary`
+--
+
+LOCK TABLES `host_summary` WRITE;
+/*!40000 ALTER TABLE `host_summary` DISABLE KEYS */;
+/*!40000 ALTER TABLE `host_summary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `host_summary_by_file_io`
 --
 
 DROP TABLE IF EXISTS `host_summary_by_file_io`;
-/*!50001 DROP VIEW IF EXISTS `host_summary_by_file_io`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `host_summary_by_file_io` (
-  `host` tinyint NOT NULL,
-  `ios` tinyint NOT NULL,
-  `io_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `host_summary_by_file_io` (
+  `host` tinyint(4) NOT NULL,
+  `ios` tinyint(4) NOT NULL,
+  `io_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `host_summary_by_file_io_type`
+-- Dumping data for table `host_summary_by_file_io`
+--
+
+LOCK TABLES `host_summary_by_file_io` WRITE;
+/*!40000 ALTER TABLE `host_summary_by_file_io` DISABLE KEYS */;
+/*!40000 ALTER TABLE `host_summary_by_file_io` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `host_summary_by_file_io_type`
 --
 
 DROP TABLE IF EXISTS `host_summary_by_file_io_type`;
-/*!50001 DROP VIEW IF EXISTS `host_summary_by_file_io_type`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `host_summary_by_file_io_type` (
-  `host` tinyint NOT NULL,
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `host_summary_by_file_io_type` (
+  `host` tinyint(4) NOT NULL,
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `host_summary_by_stages`
+-- Dumping data for table `host_summary_by_file_io_type`
+--
+
+LOCK TABLES `host_summary_by_file_io_type` WRITE;
+/*!40000 ALTER TABLE `host_summary_by_file_io_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `host_summary_by_file_io_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `host_summary_by_stages`
 --
 
 DROP TABLE IF EXISTS `host_summary_by_stages`;
-/*!50001 DROP VIEW IF EXISTS `host_summary_by_stages`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `host_summary_by_stages` (
-  `host` tinyint NOT NULL,
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `host_summary_by_stages` (
+  `host` tinyint(4) NOT NULL,
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `host_summary_by_statement_latency`
+-- Dumping data for table `host_summary_by_stages`
+--
+
+LOCK TABLES `host_summary_by_stages` WRITE;
+/*!40000 ALTER TABLE `host_summary_by_stages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `host_summary_by_stages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `host_summary_by_statement_latency`
 --
 
 DROP TABLE IF EXISTS `host_summary_by_statement_latency`;
-/*!50001 DROP VIEW IF EXISTS `host_summary_by_statement_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `host_summary_by_statement_latency` (
-  `host` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `full_scans` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `host_summary_by_statement_latency` (
+  `host` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `full_scans` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `host_summary_by_statement_type`
+-- Dumping data for table `host_summary_by_statement_latency`
+--
+
+LOCK TABLES `host_summary_by_statement_latency` WRITE;
+/*!40000 ALTER TABLE `host_summary_by_statement_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `host_summary_by_statement_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `host_summary_by_statement_type`
 --
 
 DROP TABLE IF EXISTS `host_summary_by_statement_type`;
-/*!50001 DROP VIEW IF EXISTS `host_summary_by_statement_type`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `host_summary_by_statement_type` (
-  `host` tinyint NOT NULL,
-  `statement` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `full_scans` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `host_summary_by_statement_type` (
+  `host` tinyint(4) NOT NULL,
+  `statement` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `full_scans` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `innodb_buffer_stats_by_schema`
+-- Dumping data for table `host_summary_by_statement_type`
+--
+
+LOCK TABLES `host_summary_by_statement_type` WRITE;
+/*!40000 ALTER TABLE `host_summary_by_statement_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `host_summary_by_statement_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `innodb_buffer_stats_by_schema`
 --
 
 DROP TABLE IF EXISTS `innodb_buffer_stats_by_schema`;
-/*!50001 DROP VIEW IF EXISTS `innodb_buffer_stats_by_schema`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `innodb_buffer_stats_by_schema` (
-  `object_schema` tinyint NOT NULL,
-  `allocated` tinyint NOT NULL,
-  `data` tinyint NOT NULL,
-  `pages` tinyint NOT NULL,
-  `pages_hashed` tinyint NOT NULL,
-  `pages_old` tinyint NOT NULL,
-  `rows_cached` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `innodb_buffer_stats_by_schema` (
+  `object_schema` tinyint(4) NOT NULL,
+  `allocated` tinyint(4) NOT NULL,
+  `data` tinyint(4) NOT NULL,
+  `pages` tinyint(4) NOT NULL,
+  `pages_hashed` tinyint(4) NOT NULL,
+  `pages_old` tinyint(4) NOT NULL,
+  `rows_cached` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `innodb_buffer_stats_by_table`
+-- Dumping data for table `innodb_buffer_stats_by_schema`
+--
+
+LOCK TABLES `innodb_buffer_stats_by_schema` WRITE;
+/*!40000 ALTER TABLE `innodb_buffer_stats_by_schema` DISABLE KEYS */;
+/*!40000 ALTER TABLE `innodb_buffer_stats_by_schema` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `innodb_buffer_stats_by_table`
 --
 
 DROP TABLE IF EXISTS `innodb_buffer_stats_by_table`;
-/*!50001 DROP VIEW IF EXISTS `innodb_buffer_stats_by_table`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `innodb_buffer_stats_by_table` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `allocated` tinyint NOT NULL,
-  `data` tinyint NOT NULL,
-  `pages` tinyint NOT NULL,
-  `pages_hashed` tinyint NOT NULL,
-  `pages_old` tinyint NOT NULL,
-  `rows_cached` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `innodb_buffer_stats_by_table` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `allocated` tinyint(4) NOT NULL,
+  `data` tinyint(4) NOT NULL,
+  `pages` tinyint(4) NOT NULL,
+  `pages_hashed` tinyint(4) NOT NULL,
+  `pages_old` tinyint(4) NOT NULL,
+  `rows_cached` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `innodb_lock_waits`
+-- Dumping data for table `innodb_buffer_stats_by_table`
+--
+
+LOCK TABLES `innodb_buffer_stats_by_table` WRITE;
+/*!40000 ALTER TABLE `innodb_buffer_stats_by_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `innodb_buffer_stats_by_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `innodb_lock_waits`
 --
 
 DROP TABLE IF EXISTS `innodb_lock_waits`;
-/*!50001 DROP VIEW IF EXISTS `innodb_lock_waits`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `innodb_lock_waits` (
-  `wait_started` tinyint NOT NULL,
-  `wait_age` tinyint NOT NULL,
-  `wait_age_secs` tinyint NOT NULL,
-  `locked_table` tinyint NOT NULL,
-  `locked_index` tinyint NOT NULL,
-  `locked_type` tinyint NOT NULL,
-  `waiting_trx_id` tinyint NOT NULL,
-  `waiting_trx_started` tinyint NOT NULL,
-  `waiting_trx_age` tinyint NOT NULL,
-  `waiting_trx_rows_locked` tinyint NOT NULL,
-  `waiting_trx_rows_modified` tinyint NOT NULL,
-  `waiting_pid` tinyint NOT NULL,
-  `waiting_query` tinyint NOT NULL,
-  `waiting_lock_id` tinyint NOT NULL,
-  `waiting_lock_mode` tinyint NOT NULL,
-  `blocking_trx_id` tinyint NOT NULL,
-  `blocking_pid` tinyint NOT NULL,
-  `blocking_query` tinyint NOT NULL,
-  `blocking_lock_id` tinyint NOT NULL,
-  `blocking_lock_mode` tinyint NOT NULL,
-  `blocking_trx_started` tinyint NOT NULL,
-  `blocking_trx_age` tinyint NOT NULL,
-  `blocking_trx_rows_locked` tinyint NOT NULL,
-  `blocking_trx_rows_modified` tinyint NOT NULL,
-  `sql_kill_blocking_query` tinyint NOT NULL,
-  `sql_kill_blocking_connection` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `innodb_lock_waits` (
+  `wait_started` tinyint(4) NOT NULL,
+  `wait_age` tinyint(4) NOT NULL,
+  `wait_age_secs` tinyint(4) NOT NULL,
+  `locked_table` tinyint(4) NOT NULL,
+  `locked_index` tinyint(4) NOT NULL,
+  `locked_type` tinyint(4) NOT NULL,
+  `waiting_trx_id` tinyint(4) NOT NULL,
+  `waiting_trx_started` tinyint(4) NOT NULL,
+  `waiting_trx_age` tinyint(4) NOT NULL,
+  `waiting_trx_rows_locked` tinyint(4) NOT NULL,
+  `waiting_trx_rows_modified` tinyint(4) NOT NULL,
+  `waiting_pid` tinyint(4) NOT NULL,
+  `waiting_query` tinyint(4) NOT NULL,
+  `waiting_lock_id` tinyint(4) NOT NULL,
+  `waiting_lock_mode` tinyint(4) NOT NULL,
+  `blocking_trx_id` tinyint(4) NOT NULL,
+  `blocking_pid` tinyint(4) NOT NULL,
+  `blocking_query` tinyint(4) NOT NULL,
+  `blocking_lock_id` tinyint(4) NOT NULL,
+  `blocking_lock_mode` tinyint(4) NOT NULL,
+  `blocking_trx_started` tinyint(4) NOT NULL,
+  `blocking_trx_age` tinyint(4) NOT NULL,
+  `blocking_trx_rows_locked` tinyint(4) NOT NULL,
+  `blocking_trx_rows_modified` tinyint(4) NOT NULL,
+  `sql_kill_blocking_query` tinyint(4) NOT NULL,
+  `sql_kill_blocking_connection` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `io_by_thread_by_latency`
+-- Dumping data for table `innodb_lock_waits`
+--
+
+LOCK TABLES `innodb_lock_waits` WRITE;
+/*!40000 ALTER TABLE `innodb_lock_waits` DISABLE KEYS */;
+/*!40000 ALTER TABLE `innodb_lock_waits` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `io_by_thread_by_latency`
 --
 
 DROP TABLE IF EXISTS `io_by_thread_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `io_by_thread_by_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `io_by_thread_by_latency` (
-  `user` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `min_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `thread_id` tinyint NOT NULL,
-  `processlist_id` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `io_by_thread_by_latency` (
+  `user` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `min_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `thread_id` tinyint(4) NOT NULL,
+  `processlist_id` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `io_global_by_file_by_bytes`
+-- Dumping data for table `io_by_thread_by_latency`
+--
+
+LOCK TABLES `io_by_thread_by_latency` WRITE;
+/*!40000 ALTER TABLE `io_by_thread_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `io_by_thread_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `io_global_by_file_by_bytes`
 --
 
 DROP TABLE IF EXISTS `io_global_by_file_by_bytes`;
-/*!50001 DROP VIEW IF EXISTS `io_global_by_file_by_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `io_global_by_file_by_bytes` (
-  `file` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `total_read` tinyint NOT NULL,
-  `avg_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `total_written` tinyint NOT NULL,
-  `avg_write` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `write_pct` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `io_global_by_file_by_bytes` (
+  `file` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `total_read` tinyint(4) NOT NULL,
+  `avg_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `total_written` tinyint(4) NOT NULL,
+  `avg_write` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `write_pct` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `io_global_by_file_by_latency`
+-- Dumping data for table `io_global_by_file_by_bytes`
+--
+
+LOCK TABLES `io_global_by_file_by_bytes` WRITE;
+/*!40000 ALTER TABLE `io_global_by_file_by_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `io_global_by_file_by_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `io_global_by_file_by_latency`
 --
 
 DROP TABLE IF EXISTS `io_global_by_file_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `io_global_by_file_by_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `io_global_by_file_by_latency` (
-  `file` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `read_latency` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `write_latency` tinyint NOT NULL,
-  `count_misc` tinyint NOT NULL,
-  `misc_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `io_global_by_file_by_latency` (
+  `file` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `read_latency` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `write_latency` tinyint(4) NOT NULL,
+  `count_misc` tinyint(4) NOT NULL,
+  `misc_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `io_global_by_wait_by_bytes`
+-- Dumping data for table `io_global_by_file_by_latency`
+--
+
+LOCK TABLES `io_global_by_file_by_latency` WRITE;
+/*!40000 ALTER TABLE `io_global_by_file_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `io_global_by_file_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `io_global_by_wait_by_bytes`
 --
 
 DROP TABLE IF EXISTS `io_global_by_wait_by_bytes`;
-/*!50001 DROP VIEW IF EXISTS `io_global_by_wait_by_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `io_global_by_wait_by_bytes` (
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `min_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `total_read` tinyint NOT NULL,
-  `avg_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `total_written` tinyint NOT NULL,
-  `avg_written` tinyint NOT NULL,
-  `total_requested` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `io_global_by_wait_by_bytes` (
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `min_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `total_read` tinyint(4) NOT NULL,
+  `avg_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `total_written` tinyint(4) NOT NULL,
+  `avg_written` tinyint(4) NOT NULL,
+  `total_requested` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `io_global_by_wait_by_latency`
+-- Dumping data for table `io_global_by_wait_by_bytes`
+--
+
+LOCK TABLES `io_global_by_wait_by_bytes` WRITE;
+/*!40000 ALTER TABLE `io_global_by_wait_by_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `io_global_by_wait_by_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `io_global_by_wait_by_latency`
 --
 
 DROP TABLE IF EXISTS `io_global_by_wait_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `io_global_by_wait_by_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `io_global_by_wait_by_latency` (
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `read_latency` tinyint NOT NULL,
-  `write_latency` tinyint NOT NULL,
-  `misc_latency` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `total_read` tinyint NOT NULL,
-  `avg_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `total_written` tinyint NOT NULL,
-  `avg_written` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `io_global_by_wait_by_latency` (
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `read_latency` tinyint(4) NOT NULL,
+  `write_latency` tinyint(4) NOT NULL,
+  `misc_latency` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `total_read` tinyint(4) NOT NULL,
+  `avg_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `total_written` tinyint(4) NOT NULL,
+  `avg_written` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `latest_file_io`
+-- Dumping data for table `io_global_by_wait_by_latency`
+--
+
+LOCK TABLES `io_global_by_wait_by_latency` WRITE;
+/*!40000 ALTER TABLE `io_global_by_wait_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `io_global_by_wait_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `latest_file_io`
 --
 
 DROP TABLE IF EXISTS `latest_file_io`;
-/*!50001 DROP VIEW IF EXISTS `latest_file_io`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `latest_file_io` (
-  `thread` tinyint NOT NULL,
-  `file` tinyint NOT NULL,
-  `latency` tinyint NOT NULL,
-  `operation` tinyint NOT NULL,
-  `requested` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `latest_file_io` (
+  `thread` tinyint(4) NOT NULL,
+  `file` tinyint(4) NOT NULL,
+  `latency` tinyint(4) NOT NULL,
+  `operation` tinyint(4) NOT NULL,
+  `requested` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `memory_by_host_by_current_bytes`
+-- Dumping data for table `latest_file_io`
+--
+
+LOCK TABLES `latest_file_io` WRITE;
+/*!40000 ALTER TABLE `latest_file_io` DISABLE KEYS */;
+/*!40000 ALTER TABLE `latest_file_io` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `memory_by_host_by_current_bytes`
 --
 
 DROP TABLE IF EXISTS `memory_by_host_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `memory_by_host_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `memory_by_host_by_current_bytes` (
-  `host` tinyint NOT NULL,
-  `current_count_used` tinyint NOT NULL,
-  `current_allocated` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `current_max_alloc` tinyint NOT NULL,
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `memory_by_host_by_current_bytes` (
+  `host` tinyint(4) NOT NULL,
+  `current_count_used` tinyint(4) NOT NULL,
+  `current_allocated` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `current_max_alloc` tinyint(4) NOT NULL,
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `memory_by_thread_by_current_bytes`
+-- Dumping data for table `memory_by_host_by_current_bytes`
+--
+
+LOCK TABLES `memory_by_host_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `memory_by_host_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `memory_by_host_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `memory_by_thread_by_current_bytes`
 --
 
 DROP TABLE IF EXISTS `memory_by_thread_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `memory_by_thread_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `memory_by_thread_by_current_bytes` (
-  `thread_id` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `current_count_used` tinyint NOT NULL,
-  `current_allocated` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `current_max_alloc` tinyint NOT NULL,
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `memory_by_thread_by_current_bytes` (
+  `thread_id` tinyint(4) NOT NULL,
+  `user` tinyint(4) NOT NULL,
+  `current_count_used` tinyint(4) NOT NULL,
+  `current_allocated` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `current_max_alloc` tinyint(4) NOT NULL,
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `memory_by_user_by_current_bytes`
+-- Dumping data for table `memory_by_thread_by_current_bytes`
+--
+
+LOCK TABLES `memory_by_thread_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `memory_by_thread_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `memory_by_thread_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `memory_by_user_by_current_bytes`
 --
 
 DROP TABLE IF EXISTS `memory_by_user_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `memory_by_user_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `memory_by_user_by_current_bytes` (
-  `user` tinyint NOT NULL,
-  `current_count_used` tinyint NOT NULL,
-  `current_allocated` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `current_max_alloc` tinyint NOT NULL,
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `memory_by_user_by_current_bytes` (
+  `user` tinyint(4) NOT NULL,
+  `current_count_used` tinyint(4) NOT NULL,
+  `current_allocated` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `current_max_alloc` tinyint(4) NOT NULL,
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `memory_global_by_current_bytes`
+-- Dumping data for table `memory_by_user_by_current_bytes`
+--
+
+LOCK TABLES `memory_by_user_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `memory_by_user_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `memory_by_user_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `memory_global_by_current_bytes`
 --
 
 DROP TABLE IF EXISTS `memory_global_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `memory_global_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `memory_global_by_current_bytes` (
-  `event_name` tinyint NOT NULL,
-  `current_count` tinyint NOT NULL,
-  `current_alloc` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `high_count` tinyint NOT NULL,
-  `high_alloc` tinyint NOT NULL,
-  `high_avg_alloc` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `memory_global_by_current_bytes` (
+  `event_name` tinyint(4) NOT NULL,
+  `current_count` tinyint(4) NOT NULL,
+  `current_alloc` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `high_count` tinyint(4) NOT NULL,
+  `high_alloc` tinyint(4) NOT NULL,
+  `high_avg_alloc` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `memory_global_total`
+-- Dumping data for table `memory_global_by_current_bytes`
+--
+
+LOCK TABLES `memory_global_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `memory_global_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `memory_global_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `memory_global_total`
 --
 
 DROP TABLE IF EXISTS `memory_global_total`;
-/*!50001 DROP VIEW IF EXISTS `memory_global_total`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `memory_global_total` (
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `memory_global_total` (
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `metrics`
+-- Dumping data for table `memory_global_total`
+--
+
+LOCK TABLES `memory_global_total` WRITE;
+/*!40000 ALTER TABLE `memory_global_total` DISABLE KEYS */;
+/*!40000 ALTER TABLE `memory_global_total` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `metrics`
 --
 
 DROP TABLE IF EXISTS `metrics`;
-/*!50001 DROP VIEW IF EXISTS `metrics`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `metrics` (
-  `Variable_name` tinyint NOT NULL,
-  `Variable_value` tinyint NOT NULL,
-  `Type` tinyint NOT NULL,
-  `Enabled` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `metrics` (
+  `Variable_name` tinyint(4) NOT NULL,
+  `Variable_value` tinyint(4) NOT NULL,
+  `Type` tinyint(4) NOT NULL,
+  `Enabled` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `processlist`
+-- Dumping data for table `metrics`
+--
+
+LOCK TABLES `metrics` WRITE;
+/*!40000 ALTER TABLE `metrics` DISABLE KEYS */;
+/*!40000 ALTER TABLE `metrics` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `processlist`
 --
 
 DROP TABLE IF EXISTS `processlist`;
-/*!50001 DROP VIEW IF EXISTS `processlist`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `processlist` (
-  `thd_id` tinyint NOT NULL,
-  `conn_id` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `command` tinyint NOT NULL,
-  `state` tinyint NOT NULL,
-  `time` tinyint NOT NULL,
-  `current_statement` tinyint NOT NULL,
-  `statement_latency` tinyint NOT NULL,
-  `progress` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `tmp_tables` tinyint NOT NULL,
-  `tmp_disk_tables` tinyint NOT NULL,
-  `full_scan` tinyint NOT NULL,
-  `last_statement` tinyint NOT NULL,
-  `last_statement_latency` tinyint NOT NULL,
-  `current_memory` tinyint NOT NULL,
-  `last_wait` tinyint NOT NULL,
-  `last_wait_latency` tinyint NOT NULL,
-  `source` tinyint NOT NULL,
-  `trx_latency` tinyint NOT NULL,
-  `trx_state` tinyint NOT NULL,
-  `trx_autocommit` tinyint NOT NULL,
-  `pid` tinyint NOT NULL,
-  `program_name` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `processlist` (
+  `thd_id` tinyint(4) NOT NULL,
+  `conn_id` tinyint(4) NOT NULL,
+  `user` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `command` tinyint(4) NOT NULL,
+  `state` tinyint(4) NOT NULL,
+  `time` tinyint(4) NOT NULL,
+  `current_statement` tinyint(4) NOT NULL,
+  `statement_latency` tinyint(4) NOT NULL,
+  `progress` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `tmp_tables` tinyint(4) NOT NULL,
+  `tmp_disk_tables` tinyint(4) NOT NULL,
+  `full_scan` tinyint(4) NOT NULL,
+  `last_statement` tinyint(4) NOT NULL,
+  `last_statement_latency` tinyint(4) NOT NULL,
+  `current_memory` tinyint(4) NOT NULL,
+  `last_wait` tinyint(4) NOT NULL,
+  `last_wait_latency` tinyint(4) NOT NULL,
+  `source` tinyint(4) NOT NULL,
+  `trx_latency` tinyint(4) NOT NULL,
+  `trx_state` tinyint(4) NOT NULL,
+  `trx_autocommit` tinyint(4) NOT NULL,
+  `pid` tinyint(4) NOT NULL,
+  `program_name` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `ps_check_lost_instrumentation`
+-- Dumping data for table `processlist`
+--
+
+LOCK TABLES `processlist` WRITE;
+/*!40000 ALTER TABLE `processlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `processlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ps_check_lost_instrumentation`
 --
 
 DROP TABLE IF EXISTS `ps_check_lost_instrumentation`;
-/*!50001 DROP VIEW IF EXISTS `ps_check_lost_instrumentation`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `ps_check_lost_instrumentation` (
-  `variable_name` tinyint NOT NULL,
-  `variable_value` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ps_check_lost_instrumentation` (
+  `variable_name` tinyint(4) NOT NULL,
+  `variable_value` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_auto_increment_columns`
+-- Dumping data for table `ps_check_lost_instrumentation`
+--
+
+LOCK TABLES `ps_check_lost_instrumentation` WRITE;
+/*!40000 ALTER TABLE `ps_check_lost_instrumentation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ps_check_lost_instrumentation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_auto_increment_columns`
 --
 
 DROP TABLE IF EXISTS `schema_auto_increment_columns`;
-/*!50001 DROP VIEW IF EXISTS `schema_auto_increment_columns`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_auto_increment_columns` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `column_name` tinyint NOT NULL,
-  `data_type` tinyint NOT NULL,
-  `column_type` tinyint NOT NULL,
-  `is_signed` tinyint NOT NULL,
-  `is_unsigned` tinyint NOT NULL,
-  `max_value` tinyint NOT NULL,
-  `auto_increment` tinyint NOT NULL,
-  `auto_increment_ratio` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_auto_increment_columns` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `column_name` tinyint(4) NOT NULL,
+  `data_type` tinyint(4) NOT NULL,
+  `column_type` tinyint(4) NOT NULL,
+  `is_signed` tinyint(4) NOT NULL,
+  `is_unsigned` tinyint(4) NOT NULL,
+  `max_value` tinyint(4) NOT NULL,
+  `auto_increment` tinyint(4) NOT NULL,
+  `auto_increment_ratio` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_index_statistics`
+-- Dumping data for table `schema_auto_increment_columns`
+--
+
+LOCK TABLES `schema_auto_increment_columns` WRITE;
+/*!40000 ALTER TABLE `schema_auto_increment_columns` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_auto_increment_columns` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_index_statistics`
 --
 
 DROP TABLE IF EXISTS `schema_index_statistics`;
-/*!50001 DROP VIEW IF EXISTS `schema_index_statistics`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_index_statistics` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `index_name` tinyint NOT NULL,
-  `rows_selected` tinyint NOT NULL,
-  `select_latency` tinyint NOT NULL,
-  `rows_inserted` tinyint NOT NULL,
-  `insert_latency` tinyint NOT NULL,
-  `rows_updated` tinyint NOT NULL,
-  `update_latency` tinyint NOT NULL,
-  `rows_deleted` tinyint NOT NULL,
-  `delete_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_index_statistics` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `index_name` tinyint(4) NOT NULL,
+  `rows_selected` tinyint(4) NOT NULL,
+  `select_latency` tinyint(4) NOT NULL,
+  `rows_inserted` tinyint(4) NOT NULL,
+  `insert_latency` tinyint(4) NOT NULL,
+  `rows_updated` tinyint(4) NOT NULL,
+  `update_latency` tinyint(4) NOT NULL,
+  `rows_deleted` tinyint(4) NOT NULL,
+  `delete_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_object_overview`
+-- Dumping data for table `schema_index_statistics`
+--
+
+LOCK TABLES `schema_index_statistics` WRITE;
+/*!40000 ALTER TABLE `schema_index_statistics` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_index_statistics` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_object_overview`
 --
 
 DROP TABLE IF EXISTS `schema_object_overview`;
-/*!50001 DROP VIEW IF EXISTS `schema_object_overview`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_object_overview` (
-  `db` tinyint NOT NULL,
-  `object_type` tinyint NOT NULL,
-  `count` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_object_overview` (
+  `db` tinyint(4) NOT NULL,
+  `object_type` tinyint(4) NOT NULL,
+  `count` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_redundant_indexes`
+-- Dumping data for table `schema_object_overview`
+--
+
+LOCK TABLES `schema_object_overview` WRITE;
+/*!40000 ALTER TABLE `schema_object_overview` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_object_overview` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_redundant_indexes`
 --
 
 DROP TABLE IF EXISTS `schema_redundant_indexes`;
-/*!50001 DROP VIEW IF EXISTS `schema_redundant_indexes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_redundant_indexes` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `redundant_index_name` tinyint NOT NULL,
-  `redundant_index_columns` tinyint NOT NULL,
-  `redundant_index_non_unique` tinyint NOT NULL,
-  `dominant_index_name` tinyint NOT NULL,
-  `dominant_index_columns` tinyint NOT NULL,
-  `dominant_index_non_unique` tinyint NOT NULL,
-  `subpart_exists` tinyint NOT NULL,
-  `sql_drop_index` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_redundant_indexes` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `redundant_index_name` tinyint(4) NOT NULL,
+  `redundant_index_columns` tinyint(4) NOT NULL,
+  `redundant_index_non_unique` tinyint(4) NOT NULL,
+  `dominant_index_name` tinyint(4) NOT NULL,
+  `dominant_index_columns` tinyint(4) NOT NULL,
+  `dominant_index_non_unique` tinyint(4) NOT NULL,
+  `subpart_exists` tinyint(4) NOT NULL,
+  `sql_drop_index` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_table_lock_waits`
+-- Dumping data for table `schema_redundant_indexes`
+--
+
+LOCK TABLES `schema_redundant_indexes` WRITE;
+/*!40000 ALTER TABLE `schema_redundant_indexes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_redundant_indexes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_table_lock_waits`
 --
 
 DROP TABLE IF EXISTS `schema_table_lock_waits`;
-/*!50001 DROP VIEW IF EXISTS `schema_table_lock_waits`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_table_lock_waits` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `waiting_thread_id` tinyint NOT NULL,
-  `waiting_pid` tinyint NOT NULL,
-  `waiting_account` tinyint NOT NULL,
-  `waiting_lock_type` tinyint NOT NULL,
-  `waiting_lock_duration` tinyint NOT NULL,
-  `waiting_query` tinyint NOT NULL,
-  `waiting_query_secs` tinyint NOT NULL,
-  `waiting_query_rows_affected` tinyint NOT NULL,
-  `waiting_query_rows_examined` tinyint NOT NULL,
-  `blocking_thread_id` tinyint NOT NULL,
-  `blocking_pid` tinyint NOT NULL,
-  `blocking_account` tinyint NOT NULL,
-  `blocking_lock_type` tinyint NOT NULL,
-  `blocking_lock_duration` tinyint NOT NULL,
-  `sql_kill_blocking_query` tinyint NOT NULL,
-  `sql_kill_blocking_connection` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_table_lock_waits` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `waiting_thread_id` tinyint(4) NOT NULL,
+  `waiting_pid` tinyint(4) NOT NULL,
+  `waiting_account` tinyint(4) NOT NULL,
+  `waiting_lock_type` tinyint(4) NOT NULL,
+  `waiting_lock_duration` tinyint(4) NOT NULL,
+  `waiting_query` tinyint(4) NOT NULL,
+  `waiting_query_secs` tinyint(4) NOT NULL,
+  `waiting_query_rows_affected` tinyint(4) NOT NULL,
+  `waiting_query_rows_examined` tinyint(4) NOT NULL,
+  `blocking_thread_id` tinyint(4) NOT NULL,
+  `blocking_pid` tinyint(4) NOT NULL,
+  `blocking_account` tinyint(4) NOT NULL,
+  `blocking_lock_type` tinyint(4) NOT NULL,
+  `blocking_lock_duration` tinyint(4) NOT NULL,
+  `sql_kill_blocking_query` tinyint(4) NOT NULL,
+  `sql_kill_blocking_connection` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_table_statistics`
+-- Dumping data for table `schema_table_lock_waits`
+--
+
+LOCK TABLES `schema_table_lock_waits` WRITE;
+/*!40000 ALTER TABLE `schema_table_lock_waits` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_table_lock_waits` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_table_statistics`
 --
 
 DROP TABLE IF EXISTS `schema_table_statistics`;
-/*!50001 DROP VIEW IF EXISTS `schema_table_statistics`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_table_statistics` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `rows_fetched` tinyint NOT NULL,
-  `fetch_latency` tinyint NOT NULL,
-  `rows_inserted` tinyint NOT NULL,
-  `insert_latency` tinyint NOT NULL,
-  `rows_updated` tinyint NOT NULL,
-  `update_latency` tinyint NOT NULL,
-  `rows_deleted` tinyint NOT NULL,
-  `delete_latency` tinyint NOT NULL,
-  `io_read_requests` tinyint NOT NULL,
-  `io_read` tinyint NOT NULL,
-  `io_read_latency` tinyint NOT NULL,
-  `io_write_requests` tinyint NOT NULL,
-  `io_write` tinyint NOT NULL,
-  `io_write_latency` tinyint NOT NULL,
-  `io_misc_requests` tinyint NOT NULL,
-  `io_misc_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_table_statistics` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `rows_fetched` tinyint(4) NOT NULL,
+  `fetch_latency` tinyint(4) NOT NULL,
+  `rows_inserted` tinyint(4) NOT NULL,
+  `insert_latency` tinyint(4) NOT NULL,
+  `rows_updated` tinyint(4) NOT NULL,
+  `update_latency` tinyint(4) NOT NULL,
+  `rows_deleted` tinyint(4) NOT NULL,
+  `delete_latency` tinyint(4) NOT NULL,
+  `io_read_requests` tinyint(4) NOT NULL,
+  `io_read` tinyint(4) NOT NULL,
+  `io_read_latency` tinyint(4) NOT NULL,
+  `io_write_requests` tinyint(4) NOT NULL,
+  `io_write` tinyint(4) NOT NULL,
+  `io_write_latency` tinyint(4) NOT NULL,
+  `io_misc_requests` tinyint(4) NOT NULL,
+  `io_misc_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_table_statistics_with_buffer`
+-- Dumping data for table `schema_table_statistics`
+--
+
+LOCK TABLES `schema_table_statistics` WRITE;
+/*!40000 ALTER TABLE `schema_table_statistics` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_table_statistics` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_table_statistics_with_buffer`
 --
 
 DROP TABLE IF EXISTS `schema_table_statistics_with_buffer`;
-/*!50001 DROP VIEW IF EXISTS `schema_table_statistics_with_buffer`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_table_statistics_with_buffer` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `rows_fetched` tinyint NOT NULL,
-  `fetch_latency` tinyint NOT NULL,
-  `rows_inserted` tinyint NOT NULL,
-  `insert_latency` tinyint NOT NULL,
-  `rows_updated` tinyint NOT NULL,
-  `update_latency` tinyint NOT NULL,
-  `rows_deleted` tinyint NOT NULL,
-  `delete_latency` tinyint NOT NULL,
-  `io_read_requests` tinyint NOT NULL,
-  `io_read` tinyint NOT NULL,
-  `io_read_latency` tinyint NOT NULL,
-  `io_write_requests` tinyint NOT NULL,
-  `io_write` tinyint NOT NULL,
-  `io_write_latency` tinyint NOT NULL,
-  `io_misc_requests` tinyint NOT NULL,
-  `io_misc_latency` tinyint NOT NULL,
-  `innodb_buffer_allocated` tinyint NOT NULL,
-  `innodb_buffer_data` tinyint NOT NULL,
-  `innodb_buffer_free` tinyint NOT NULL,
-  `innodb_buffer_pages` tinyint NOT NULL,
-  `innodb_buffer_pages_hashed` tinyint NOT NULL,
-  `innodb_buffer_pages_old` tinyint NOT NULL,
-  `innodb_buffer_rows_cached` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_table_statistics_with_buffer` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `rows_fetched` tinyint(4) NOT NULL,
+  `fetch_latency` tinyint(4) NOT NULL,
+  `rows_inserted` tinyint(4) NOT NULL,
+  `insert_latency` tinyint(4) NOT NULL,
+  `rows_updated` tinyint(4) NOT NULL,
+  `update_latency` tinyint(4) NOT NULL,
+  `rows_deleted` tinyint(4) NOT NULL,
+  `delete_latency` tinyint(4) NOT NULL,
+  `io_read_requests` tinyint(4) NOT NULL,
+  `io_read` tinyint(4) NOT NULL,
+  `io_read_latency` tinyint(4) NOT NULL,
+  `io_write_requests` tinyint(4) NOT NULL,
+  `io_write` tinyint(4) NOT NULL,
+  `io_write_latency` tinyint(4) NOT NULL,
+  `io_misc_requests` tinyint(4) NOT NULL,
+  `io_misc_latency` tinyint(4) NOT NULL,
+  `innodb_buffer_allocated` tinyint(4) NOT NULL,
+  `innodb_buffer_data` tinyint(4) NOT NULL,
+  `innodb_buffer_free` tinyint(4) NOT NULL,
+  `innodb_buffer_pages` tinyint(4) NOT NULL,
+  `innodb_buffer_pages_hashed` tinyint(4) NOT NULL,
+  `innodb_buffer_pages_old` tinyint(4) NOT NULL,
+  `innodb_buffer_rows_cached` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_tables_with_full_table_scans`
+-- Dumping data for table `schema_table_statistics_with_buffer`
+--
+
+LOCK TABLES `schema_table_statistics_with_buffer` WRITE;
+/*!40000 ALTER TABLE `schema_table_statistics_with_buffer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_table_statistics_with_buffer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_tables_with_full_table_scans`
 --
 
 DROP TABLE IF EXISTS `schema_tables_with_full_table_scans`;
-/*!50001 DROP VIEW IF EXISTS `schema_tables_with_full_table_scans`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_tables_with_full_table_scans` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `rows_full_scanned` tinyint NOT NULL,
-  `latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_tables_with_full_table_scans` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `rows_full_scanned` tinyint(4) NOT NULL,
+  `latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `schema_unused_indexes`
+-- Dumping data for table `schema_tables_with_full_table_scans`
+--
+
+LOCK TABLES `schema_tables_with_full_table_scans` WRITE;
+/*!40000 ALTER TABLE `schema_tables_with_full_table_scans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_tables_with_full_table_scans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_unused_indexes`
 --
 
 DROP TABLE IF EXISTS `schema_unused_indexes`;
-/*!50001 DROP VIEW IF EXISTS `schema_unused_indexes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `schema_unused_indexes` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `index_name` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_unused_indexes` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `index_name` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `session`
+-- Dumping data for table `schema_unused_indexes`
+--
+
+LOCK TABLES `schema_unused_indexes` WRITE;
+/*!40000 ALTER TABLE `schema_unused_indexes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_unused_indexes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `session`
 --
 
 DROP TABLE IF EXISTS `session`;
-/*!50001 DROP VIEW IF EXISTS `session`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `session` (
-  `thd_id` tinyint NOT NULL,
-  `conn_id` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `command` tinyint NOT NULL,
-  `state` tinyint NOT NULL,
-  `time` tinyint NOT NULL,
-  `current_statement` tinyint NOT NULL,
-  `statement_latency` tinyint NOT NULL,
-  `progress` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `tmp_tables` tinyint NOT NULL,
-  `tmp_disk_tables` tinyint NOT NULL,
-  `full_scan` tinyint NOT NULL,
-  `last_statement` tinyint NOT NULL,
-  `last_statement_latency` tinyint NOT NULL,
-  `current_memory` tinyint NOT NULL,
-  `last_wait` tinyint NOT NULL,
-  `last_wait_latency` tinyint NOT NULL,
-  `source` tinyint NOT NULL,
-  `trx_latency` tinyint NOT NULL,
-  `trx_state` tinyint NOT NULL,
-  `trx_autocommit` tinyint NOT NULL,
-  `pid` tinyint NOT NULL,
-  `program_name` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `session` (
+  `thd_id` tinyint(4) NOT NULL,
+  `conn_id` tinyint(4) NOT NULL,
+  `user` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `command` tinyint(4) NOT NULL,
+  `state` tinyint(4) NOT NULL,
+  `time` tinyint(4) NOT NULL,
+  `current_statement` tinyint(4) NOT NULL,
+  `statement_latency` tinyint(4) NOT NULL,
+  `progress` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `tmp_tables` tinyint(4) NOT NULL,
+  `tmp_disk_tables` tinyint(4) NOT NULL,
+  `full_scan` tinyint(4) NOT NULL,
+  `last_statement` tinyint(4) NOT NULL,
+  `last_statement_latency` tinyint(4) NOT NULL,
+  `current_memory` tinyint(4) NOT NULL,
+  `last_wait` tinyint(4) NOT NULL,
+  `last_wait_latency` tinyint(4) NOT NULL,
+  `source` tinyint(4) NOT NULL,
+  `trx_latency` tinyint(4) NOT NULL,
+  `trx_state` tinyint(4) NOT NULL,
+  `trx_autocommit` tinyint(4) NOT NULL,
+  `pid` tinyint(4) NOT NULL,
+  `program_name` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `session_ssl_status`
+-- Dumping data for table `session`
+--
+
+LOCK TABLES `session` WRITE;
+/*!40000 ALTER TABLE `session` DISABLE KEYS */;
+/*!40000 ALTER TABLE `session` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `session_ssl_status`
 --
 
 DROP TABLE IF EXISTS `session_ssl_status`;
-/*!50001 DROP VIEW IF EXISTS `session_ssl_status`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `session_ssl_status` (
-  `thread_id` tinyint NOT NULL,
-  `ssl_version` tinyint NOT NULL,
-  `ssl_cipher` tinyint NOT NULL,
-  `ssl_sessions_reused` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `session_ssl_status` (
+  `thread_id` tinyint(4) NOT NULL,
+  `ssl_version` tinyint(4) NOT NULL,
+  `ssl_cipher` tinyint(4) NOT NULL,
+  `ssl_sessions_reused` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `statement_analysis`
+-- Dumping data for table `session_ssl_status`
+--
+
+LOCK TABLES `session_ssl_status` WRITE;
+/*!40000 ALTER TABLE `session_ssl_status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `session_ssl_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `statement_analysis`
 --
 
 DROP TABLE IF EXISTS `statement_analysis`;
-/*!50001 DROP VIEW IF EXISTS `statement_analysis`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `statement_analysis` (
-  `query` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `full_scan` tinyint NOT NULL,
-  `exec_count` tinyint NOT NULL,
-  `err_count` tinyint NOT NULL,
-  `warn_count` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_sent_avg` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_examined_avg` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `rows_affected_avg` tinyint NOT NULL,
-  `tmp_tables` tinyint NOT NULL,
-  `tmp_disk_tables` tinyint NOT NULL,
-  `rows_sorted` tinyint NOT NULL,
-  `sort_merge_passes` tinyint NOT NULL,
-  `digest` tinyint NOT NULL,
-  `first_seen` tinyint NOT NULL,
-  `last_seen` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statement_analysis` (
+  `query` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `full_scan` tinyint(4) NOT NULL,
+  `exec_count` tinyint(4) NOT NULL,
+  `err_count` tinyint(4) NOT NULL,
+  `warn_count` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_sent_avg` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_examined_avg` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `rows_affected_avg` tinyint(4) NOT NULL,
+  `tmp_tables` tinyint(4) NOT NULL,
+  `tmp_disk_tables` tinyint(4) NOT NULL,
+  `rows_sorted` tinyint(4) NOT NULL,
+  `sort_merge_passes` tinyint(4) NOT NULL,
+  `digest` tinyint(4) NOT NULL,
+  `first_seen` tinyint(4) NOT NULL,
+  `last_seen` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `statements_with_errors_or_warnings`
+-- Dumping data for table `statement_analysis`
+--
+
+LOCK TABLES `statement_analysis` WRITE;
+/*!40000 ALTER TABLE `statement_analysis` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statement_analysis` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `statements_with_errors_or_warnings`
 --
 
 DROP TABLE IF EXISTS `statements_with_errors_or_warnings`;
-/*!50001 DROP VIEW IF EXISTS `statements_with_errors_or_warnings`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `statements_with_errors_or_warnings` (
-  `query` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `exec_count` tinyint NOT NULL,
-  `errors` tinyint NOT NULL,
-  `error_pct` tinyint NOT NULL,
-  `warnings` tinyint NOT NULL,
-  `warning_pct` tinyint NOT NULL,
-  `first_seen` tinyint NOT NULL,
-  `last_seen` tinyint NOT NULL,
-  `digest` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statements_with_errors_or_warnings` (
+  `query` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `exec_count` tinyint(4) NOT NULL,
+  `errors` tinyint(4) NOT NULL,
+  `error_pct` tinyint(4) NOT NULL,
+  `warnings` tinyint(4) NOT NULL,
+  `warning_pct` tinyint(4) NOT NULL,
+  `first_seen` tinyint(4) NOT NULL,
+  `last_seen` tinyint(4) NOT NULL,
+  `digest` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `statements_with_full_table_scans`
+-- Dumping data for table `statements_with_errors_or_warnings`
+--
+
+LOCK TABLES `statements_with_errors_or_warnings` WRITE;
+/*!40000 ALTER TABLE `statements_with_errors_or_warnings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statements_with_errors_or_warnings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `statements_with_full_table_scans`
 --
 
 DROP TABLE IF EXISTS `statements_with_full_table_scans`;
-/*!50001 DROP VIEW IF EXISTS `statements_with_full_table_scans`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `statements_with_full_table_scans` (
-  `query` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `exec_count` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `no_index_used_count` tinyint NOT NULL,
-  `no_good_index_used_count` tinyint NOT NULL,
-  `no_index_used_pct` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_sent_avg` tinyint NOT NULL,
-  `rows_examined_avg` tinyint NOT NULL,
-  `first_seen` tinyint NOT NULL,
-  `last_seen` tinyint NOT NULL,
-  `digest` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statements_with_full_table_scans` (
+  `query` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `exec_count` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `no_index_used_count` tinyint(4) NOT NULL,
+  `no_good_index_used_count` tinyint(4) NOT NULL,
+  `no_index_used_pct` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_sent_avg` tinyint(4) NOT NULL,
+  `rows_examined_avg` tinyint(4) NOT NULL,
+  `first_seen` tinyint(4) NOT NULL,
+  `last_seen` tinyint(4) NOT NULL,
+  `digest` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `statements_with_runtimes_in_95th_percentile`
+-- Dumping data for table `statements_with_full_table_scans`
+--
+
+LOCK TABLES `statements_with_full_table_scans` WRITE;
+/*!40000 ALTER TABLE `statements_with_full_table_scans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statements_with_full_table_scans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `statements_with_runtimes_in_95th_percentile`
 --
 
 DROP TABLE IF EXISTS `statements_with_runtimes_in_95th_percentile`;
-/*!50001 DROP VIEW IF EXISTS `statements_with_runtimes_in_95th_percentile`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `statements_with_runtimes_in_95th_percentile` (
-  `query` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `full_scan` tinyint NOT NULL,
-  `exec_count` tinyint NOT NULL,
-  `err_count` tinyint NOT NULL,
-  `warn_count` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_sent_avg` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_examined_avg` tinyint NOT NULL,
-  `first_seen` tinyint NOT NULL,
-  `last_seen` tinyint NOT NULL,
-  `digest` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statements_with_runtimes_in_95th_percentile` (
+  `query` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `full_scan` tinyint(4) NOT NULL,
+  `exec_count` tinyint(4) NOT NULL,
+  `err_count` tinyint(4) NOT NULL,
+  `warn_count` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_sent_avg` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_examined_avg` tinyint(4) NOT NULL,
+  `first_seen` tinyint(4) NOT NULL,
+  `last_seen` tinyint(4) NOT NULL,
+  `digest` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `statements_with_sorting`
+-- Dumping data for table `statements_with_runtimes_in_95th_percentile`
+--
+
+LOCK TABLES `statements_with_runtimes_in_95th_percentile` WRITE;
+/*!40000 ALTER TABLE `statements_with_runtimes_in_95th_percentile` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statements_with_runtimes_in_95th_percentile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `statements_with_sorting`
 --
 
 DROP TABLE IF EXISTS `statements_with_sorting`;
-/*!50001 DROP VIEW IF EXISTS `statements_with_sorting`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `statements_with_sorting` (
-  `query` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `exec_count` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `sort_merge_passes` tinyint NOT NULL,
-  `avg_sort_merges` tinyint NOT NULL,
-  `sorts_using_scans` tinyint NOT NULL,
-  `sort_using_range` tinyint NOT NULL,
-  `rows_sorted` tinyint NOT NULL,
-  `avg_rows_sorted` tinyint NOT NULL,
-  `first_seen` tinyint NOT NULL,
-  `last_seen` tinyint NOT NULL,
-  `digest` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statements_with_sorting` (
+  `query` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `exec_count` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `sort_merge_passes` tinyint(4) NOT NULL,
+  `avg_sort_merges` tinyint(4) NOT NULL,
+  `sorts_using_scans` tinyint(4) NOT NULL,
+  `sort_using_range` tinyint(4) NOT NULL,
+  `rows_sorted` tinyint(4) NOT NULL,
+  `avg_rows_sorted` tinyint(4) NOT NULL,
+  `first_seen` tinyint(4) NOT NULL,
+  `last_seen` tinyint(4) NOT NULL,
+  `digest` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary table structure for view `statements_with_temp_tables`
+-- Dumping data for table `statements_with_sorting`
+--
+
+LOCK TABLES `statements_with_sorting` WRITE;
+/*!40000 ALTER TABLE `statements_with_sorting` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statements_with_sorting` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `statements_with_temp_tables`
 --
 
 DROP TABLE IF EXISTS `statements_with_temp_tables`;
-/*!50001 DROP VIEW IF EXISTS `statements_with_temp_tables`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `statements_with_temp_tables` (
-  `query` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `exec_count` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `memory_tmp_tables` tinyint NOT NULL,
-  `disk_tmp_tables` tinyint NOT NULL,
-  `avg_tmp_tables_per_query` tinyint NOT NULL,
-  `tmp_tables_to_disk_pct` tinyint NOT NULL,
-  `first_seen` tinyint NOT NULL,
-  `last_seen` tinyint NOT NULL,
-  `digest` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statements_with_temp_tables` (
+  `query` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `exec_count` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `memory_tmp_tables` tinyint(4) NOT NULL,
+  `disk_tmp_tables` tinyint(4) NOT NULL,
+  `avg_tmp_tables_per_query` tinyint(4) NOT NULL,
+  `tmp_tables_to_disk_pct` tinyint(4) NOT NULL,
+  `first_seen` tinyint(4) NOT NULL,
+  `last_seen` tinyint(4) NOT NULL,
+  `digest` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `statements_with_temp_tables`
+--
+
+LOCK TABLES `statements_with_temp_tables` WRITE;
+/*!40000 ALTER TABLE `statements_with_temp_tables` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statements_with_temp_tables` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sys_config`
@@ -1951,14 +2279,1383 @@ INSERT INTO `sys_config` VALUES ('statement_truncate_len','64','2023-01-31 18:07
 UNLOCK TABLES;
 
 --
--- Temporary table structure for view `user_summary`
+-- Table structure for table `user_summary`
 --
 
 DROP TABLE IF EXISTS `user_summary`;
-/*!50001 DROP VIEW IF EXISTS `user_summary`*/;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_summary` (
+  `user` tinyint(4) NOT NULL,
+  `statements` tinyint(4) NOT NULL,
+  `statement_latency` tinyint(4) NOT NULL,
+  `statement_avg_latency` tinyint(4) NOT NULL,
+  `table_scans` tinyint(4) NOT NULL,
+  `file_ios` tinyint(4) NOT NULL,
+  `file_io_latency` tinyint(4) NOT NULL,
+  `current_connections` tinyint(4) NOT NULL,
+  `total_connections` tinyint(4) NOT NULL,
+  `unique_hosts` tinyint(4) NOT NULL,
+  `current_memory` tinyint(4) NOT NULL,
+  `total_memory_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_summary`
+--
+
+LOCK TABLES `user_summary` WRITE;
+/*!40000 ALTER TABLE `user_summary` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_summary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_summary_by_file_io`
+--
+
+DROP TABLE IF EXISTS `user_summary_by_file_io`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_summary_by_file_io` (
+  `user` tinyint(4) NOT NULL,
+  `ios` tinyint(4) NOT NULL,
+  `io_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_summary_by_file_io`
+--
+
+LOCK TABLES `user_summary_by_file_io` WRITE;
+/*!40000 ALTER TABLE `user_summary_by_file_io` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_summary_by_file_io` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_summary_by_file_io_type`
+--
+
+DROP TABLE IF EXISTS `user_summary_by_file_io_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_summary_by_file_io_type` (
+  `user` tinyint(4) NOT NULL,
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_summary_by_file_io_type`
+--
+
+LOCK TABLES `user_summary_by_file_io_type` WRITE;
+/*!40000 ALTER TABLE `user_summary_by_file_io_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_summary_by_file_io_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_summary_by_stages`
+--
+
+DROP TABLE IF EXISTS `user_summary_by_stages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_summary_by_stages` (
+  `user` tinyint(4) NOT NULL,
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_summary_by_stages`
+--
+
+LOCK TABLES `user_summary_by_stages` WRITE;
+/*!40000 ALTER TABLE `user_summary_by_stages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_summary_by_stages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_summary_by_statement_latency`
+--
+
+DROP TABLE IF EXISTS `user_summary_by_statement_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_summary_by_statement_latency` (
+  `user` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `full_scans` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_summary_by_statement_latency`
+--
+
+LOCK TABLES `user_summary_by_statement_latency` WRITE;
+/*!40000 ALTER TABLE `user_summary_by_statement_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_summary_by_statement_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_summary_by_statement_type`
+--
+
+DROP TABLE IF EXISTS `user_summary_by_statement_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_summary_by_statement_type` (
+  `user` tinyint(4) NOT NULL,
+  `statement` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `full_scans` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_summary_by_statement_type`
+--
+
+LOCK TABLES `user_summary_by_statement_type` WRITE;
+/*!40000 ALTER TABLE `user_summary_by_statement_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_summary_by_statement_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `version`
+--
+
+DROP TABLE IF EXISTS `version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `version` (
+  `sys_version` tinyint(4) NOT NULL,
+  `mysql_version` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `version`
+--
+
+LOCK TABLES `version` WRITE;
+/*!40000 ALTER TABLE `version` DISABLE KEYS */;
+/*!40000 ALTER TABLE `version` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wait_classes_global_by_avg_latency`
+--
+
+DROP TABLE IF EXISTS `wait_classes_global_by_avg_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wait_classes_global_by_avg_latency` (
+  `event_class` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `min_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wait_classes_global_by_avg_latency`
+--
+
+LOCK TABLES `wait_classes_global_by_avg_latency` WRITE;
+/*!40000 ALTER TABLE `wait_classes_global_by_avg_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wait_classes_global_by_avg_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wait_classes_global_by_latency`
+--
+
+DROP TABLE IF EXISTS `wait_classes_global_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wait_classes_global_by_latency` (
+  `event_class` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `min_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wait_classes_global_by_latency`
+--
+
+LOCK TABLES `wait_classes_global_by_latency` WRITE;
+/*!40000 ALTER TABLE `wait_classes_global_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wait_classes_global_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `waits_by_host_by_latency`
+--
+
+DROP TABLE IF EXISTS `waits_by_host_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `waits_by_host_by_latency` (
+  `host` tinyint(4) NOT NULL,
+  `event` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `waits_by_host_by_latency`
+--
+
+LOCK TABLES `waits_by_host_by_latency` WRITE;
+/*!40000 ALTER TABLE `waits_by_host_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `waits_by_host_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `waits_by_user_by_latency`
+--
+
+DROP TABLE IF EXISTS `waits_by_user_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `waits_by_user_by_latency` (
+  `user` tinyint(4) NOT NULL,
+  `event` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `waits_by_user_by_latency`
+--
+
+LOCK TABLES `waits_by_user_by_latency` WRITE;
+/*!40000 ALTER TABLE `waits_by_user_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `waits_by_user_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `waits_global_by_latency`
+--
+
+DROP TABLE IF EXISTS `waits_global_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `waits_global_by_latency` (
+  `events` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `waits_global_by_latency`
+--
+
+LOCK TABLES `waits_global_by_latency` WRITE;
+/*!40000 ALTER TABLE `waits_global_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `waits_global_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$host_summary`
+--
+
+DROP TABLE IF EXISTS `x$host_summary`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$host_summary` (
+  `host` tinyint(4) NOT NULL,
+  `statements` tinyint(4) NOT NULL,
+  `statement_latency` tinyint(4) NOT NULL,
+  `statement_avg_latency` tinyint(4) NOT NULL,
+  `table_scans` tinyint(4) NOT NULL,
+  `file_ios` tinyint(4) NOT NULL,
+  `file_io_latency` tinyint(4) NOT NULL,
+  `current_connections` tinyint(4) NOT NULL,
+  `total_connections` tinyint(4) NOT NULL,
+  `unique_users` tinyint(4) NOT NULL,
+  `current_memory` tinyint(4) NOT NULL,
+  `total_memory_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$host_summary`
+--
+
+LOCK TABLES `x$host_summary` WRITE;
+/*!40000 ALTER TABLE `x$host_summary` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$host_summary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$host_summary_by_file_io`
+--
+
+DROP TABLE IF EXISTS `x$host_summary_by_file_io`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$host_summary_by_file_io` (
+  `host` tinyint(4) NOT NULL,
+  `ios` tinyint(4) NOT NULL,
+  `io_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$host_summary_by_file_io`
+--
+
+LOCK TABLES `x$host_summary_by_file_io` WRITE;
+/*!40000 ALTER TABLE `x$host_summary_by_file_io` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$host_summary_by_file_io` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$host_summary_by_file_io_type`
+--
+
+DROP TABLE IF EXISTS `x$host_summary_by_file_io_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$host_summary_by_file_io_type` (
+  `host` tinyint(4) NOT NULL,
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$host_summary_by_file_io_type`
+--
+
+LOCK TABLES `x$host_summary_by_file_io_type` WRITE;
+/*!40000 ALTER TABLE `x$host_summary_by_file_io_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$host_summary_by_file_io_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$host_summary_by_stages`
+--
+
+DROP TABLE IF EXISTS `x$host_summary_by_stages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$host_summary_by_stages` (
+  `host` tinyint(4) NOT NULL,
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$host_summary_by_stages`
+--
+
+LOCK TABLES `x$host_summary_by_stages` WRITE;
+/*!40000 ALTER TABLE `x$host_summary_by_stages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$host_summary_by_stages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$host_summary_by_statement_latency`
+--
+
+DROP TABLE IF EXISTS `x$host_summary_by_statement_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$host_summary_by_statement_latency` (
+  `host` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `full_scans` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$host_summary_by_statement_latency`
+--
+
+LOCK TABLES `x$host_summary_by_statement_latency` WRITE;
+/*!40000 ALTER TABLE `x$host_summary_by_statement_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$host_summary_by_statement_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$host_summary_by_statement_type`
+--
+
+DROP TABLE IF EXISTS `x$host_summary_by_statement_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$host_summary_by_statement_type` (
+  `host` tinyint(4) NOT NULL,
+  `statement` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `full_scans` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$host_summary_by_statement_type`
+--
+
+LOCK TABLES `x$host_summary_by_statement_type` WRITE;
+/*!40000 ALTER TABLE `x$host_summary_by_statement_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$host_summary_by_statement_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$innodb_buffer_stats_by_schema`
+--
+
+DROP TABLE IF EXISTS `x$innodb_buffer_stats_by_schema`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$innodb_buffer_stats_by_schema` (
+  `object_schema` tinyint(4) NOT NULL,
+  `allocated` tinyint(4) NOT NULL,
+  `data` tinyint(4) NOT NULL,
+  `pages` tinyint(4) NOT NULL,
+  `pages_hashed` tinyint(4) NOT NULL,
+  `pages_old` tinyint(4) NOT NULL,
+  `rows_cached` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$innodb_buffer_stats_by_schema`
+--
+
+LOCK TABLES `x$innodb_buffer_stats_by_schema` WRITE;
+/*!40000 ALTER TABLE `x$innodb_buffer_stats_by_schema` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$innodb_buffer_stats_by_schema` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$innodb_buffer_stats_by_table`
+--
+
+DROP TABLE IF EXISTS `x$innodb_buffer_stats_by_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$innodb_buffer_stats_by_table` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `allocated` tinyint(4) NOT NULL,
+  `data` tinyint(4) NOT NULL,
+  `pages` tinyint(4) NOT NULL,
+  `pages_hashed` tinyint(4) NOT NULL,
+  `pages_old` tinyint(4) NOT NULL,
+  `rows_cached` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$innodb_buffer_stats_by_table`
+--
+
+LOCK TABLES `x$innodb_buffer_stats_by_table` WRITE;
+/*!40000 ALTER TABLE `x$innodb_buffer_stats_by_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$innodb_buffer_stats_by_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$innodb_lock_waits`
+--
+
+DROP TABLE IF EXISTS `x$innodb_lock_waits`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$innodb_lock_waits` (
+  `wait_started` tinyint(4) NOT NULL,
+  `wait_age` tinyint(4) NOT NULL,
+  `wait_age_secs` tinyint(4) NOT NULL,
+  `locked_table` tinyint(4) NOT NULL,
+  `locked_index` tinyint(4) NOT NULL,
+  `locked_type` tinyint(4) NOT NULL,
+  `waiting_trx_id` tinyint(4) NOT NULL,
+  `waiting_trx_started` tinyint(4) NOT NULL,
+  `waiting_trx_age` tinyint(4) NOT NULL,
+  `waiting_trx_rows_locked` tinyint(4) NOT NULL,
+  `waiting_trx_rows_modified` tinyint(4) NOT NULL,
+  `waiting_pid` tinyint(4) NOT NULL,
+  `waiting_query` tinyint(4) NOT NULL,
+  `waiting_lock_id` tinyint(4) NOT NULL,
+  `waiting_lock_mode` tinyint(4) NOT NULL,
+  `blocking_trx_id` tinyint(4) NOT NULL,
+  `blocking_pid` tinyint(4) NOT NULL,
+  `blocking_query` tinyint(4) NOT NULL,
+  `blocking_lock_id` tinyint(4) NOT NULL,
+  `blocking_lock_mode` tinyint(4) NOT NULL,
+  `blocking_trx_started` tinyint(4) NOT NULL,
+  `blocking_trx_age` tinyint(4) NOT NULL,
+  `blocking_trx_rows_locked` tinyint(4) NOT NULL,
+  `blocking_trx_rows_modified` tinyint(4) NOT NULL,
+  `sql_kill_blocking_query` tinyint(4) NOT NULL,
+  `sql_kill_blocking_connection` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$innodb_lock_waits`
+--
+
+LOCK TABLES `x$innodb_lock_waits` WRITE;
+/*!40000 ALTER TABLE `x$innodb_lock_waits` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$innodb_lock_waits` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$io_by_thread_by_latency`
+--
+
+DROP TABLE IF EXISTS `x$io_by_thread_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$io_by_thread_by_latency` (
+  `user` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `min_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `thread_id` tinyint(4) NOT NULL,
+  `processlist_id` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$io_by_thread_by_latency`
+--
+
+LOCK TABLES `x$io_by_thread_by_latency` WRITE;
+/*!40000 ALTER TABLE `x$io_by_thread_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$io_by_thread_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$io_global_by_file_by_bytes`
+--
+
+DROP TABLE IF EXISTS `x$io_global_by_file_by_bytes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$io_global_by_file_by_bytes` (
+  `file` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `total_read` tinyint(4) NOT NULL,
+  `avg_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `total_written` tinyint(4) NOT NULL,
+  `avg_write` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `write_pct` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$io_global_by_file_by_bytes`
+--
+
+LOCK TABLES `x$io_global_by_file_by_bytes` WRITE;
+/*!40000 ALTER TABLE `x$io_global_by_file_by_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$io_global_by_file_by_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$io_global_by_file_by_latency`
+--
+
+DROP TABLE IF EXISTS `x$io_global_by_file_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$io_global_by_file_by_latency` (
+  `file` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `read_latency` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `write_latency` tinyint(4) NOT NULL,
+  `count_misc` tinyint(4) NOT NULL,
+  `misc_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$io_global_by_file_by_latency`
+--
+
+LOCK TABLES `x$io_global_by_file_by_latency` WRITE;
+/*!40000 ALTER TABLE `x$io_global_by_file_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$io_global_by_file_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$io_global_by_wait_by_bytes`
+--
+
+DROP TABLE IF EXISTS `x$io_global_by_wait_by_bytes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$io_global_by_wait_by_bytes` (
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `min_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `total_read` tinyint(4) NOT NULL,
+  `avg_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `total_written` tinyint(4) NOT NULL,
+  `avg_written` tinyint(4) NOT NULL,
+  `total_requested` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$io_global_by_wait_by_bytes`
+--
+
+LOCK TABLES `x$io_global_by_wait_by_bytes` WRITE;
+/*!40000 ALTER TABLE `x$io_global_by_wait_by_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$io_global_by_wait_by_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$io_global_by_wait_by_latency`
+--
+
+DROP TABLE IF EXISTS `x$io_global_by_wait_by_latency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$io_global_by_wait_by_latency` (
+  `event_name` tinyint(4) NOT NULL,
+  `total` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `avg_latency` tinyint(4) NOT NULL,
+  `max_latency` tinyint(4) NOT NULL,
+  `read_latency` tinyint(4) NOT NULL,
+  `write_latency` tinyint(4) NOT NULL,
+  `misc_latency` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `total_read` tinyint(4) NOT NULL,
+  `avg_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `total_written` tinyint(4) NOT NULL,
+  `avg_written` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$io_global_by_wait_by_latency`
+--
+
+LOCK TABLES `x$io_global_by_wait_by_latency` WRITE;
+/*!40000 ALTER TABLE `x$io_global_by_wait_by_latency` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$io_global_by_wait_by_latency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$latest_file_io`
+--
+
+DROP TABLE IF EXISTS `x$latest_file_io`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$latest_file_io` (
+  `thread` tinyint(4) NOT NULL,
+  `file` tinyint(4) NOT NULL,
+  `latency` tinyint(4) NOT NULL,
+  `operation` tinyint(4) NOT NULL,
+  `requested` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$latest_file_io`
+--
+
+LOCK TABLES `x$latest_file_io` WRITE;
+/*!40000 ALTER TABLE `x$latest_file_io` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$latest_file_io` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$memory_by_host_by_current_bytes`
+--
+
+DROP TABLE IF EXISTS `x$memory_by_host_by_current_bytes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$memory_by_host_by_current_bytes` (
+  `host` tinyint(4) NOT NULL,
+  `current_count_used` tinyint(4) NOT NULL,
+  `current_allocated` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `current_max_alloc` tinyint(4) NOT NULL,
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$memory_by_host_by_current_bytes`
+--
+
+LOCK TABLES `x$memory_by_host_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `x$memory_by_host_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$memory_by_host_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$memory_by_thread_by_current_bytes`
+--
+
+DROP TABLE IF EXISTS `x$memory_by_thread_by_current_bytes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$memory_by_thread_by_current_bytes` (
+  `thread_id` tinyint(4) NOT NULL,
+  `user` tinyint(4) NOT NULL,
+  `current_count_used` tinyint(4) NOT NULL,
+  `current_allocated` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `current_max_alloc` tinyint(4) NOT NULL,
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$memory_by_thread_by_current_bytes`
+--
+
+LOCK TABLES `x$memory_by_thread_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `x$memory_by_thread_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$memory_by_thread_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$memory_by_user_by_current_bytes`
+--
+
+DROP TABLE IF EXISTS `x$memory_by_user_by_current_bytes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$memory_by_user_by_current_bytes` (
+  `user` tinyint(4) NOT NULL,
+  `current_count_used` tinyint(4) NOT NULL,
+  `current_allocated` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `current_max_alloc` tinyint(4) NOT NULL,
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$memory_by_user_by_current_bytes`
+--
+
+LOCK TABLES `x$memory_by_user_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `x$memory_by_user_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$memory_by_user_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$memory_global_by_current_bytes`
+--
+
+DROP TABLE IF EXISTS `x$memory_global_by_current_bytes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$memory_global_by_current_bytes` (
+  `event_name` tinyint(4) NOT NULL,
+  `current_count` tinyint(4) NOT NULL,
+  `current_alloc` tinyint(4) NOT NULL,
+  `current_avg_alloc` tinyint(4) NOT NULL,
+  `high_count` tinyint(4) NOT NULL,
+  `high_alloc` tinyint(4) NOT NULL,
+  `high_avg_alloc` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$memory_global_by_current_bytes`
+--
+
+LOCK TABLES `x$memory_global_by_current_bytes` WRITE;
+/*!40000 ALTER TABLE `x$memory_global_by_current_bytes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$memory_global_by_current_bytes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$memory_global_total`
+--
+
+DROP TABLE IF EXISTS `x$memory_global_total`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$memory_global_total` (
+  `total_allocated` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$memory_global_total`
+--
+
+LOCK TABLES `x$memory_global_total` WRITE;
+/*!40000 ALTER TABLE `x$memory_global_total` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$memory_global_total` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$processlist`
+--
+
+DROP TABLE IF EXISTS `x$processlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$processlist` (
+  `thd_id` tinyint(4) NOT NULL,
+  `conn_id` tinyint(4) NOT NULL,
+  `user` tinyint(4) NOT NULL,
+  `db` tinyint(4) NOT NULL,
+  `command` tinyint(4) NOT NULL,
+  `state` tinyint(4) NOT NULL,
+  `time` tinyint(4) NOT NULL,
+  `current_statement` tinyint(4) NOT NULL,
+  `statement_latency` tinyint(4) NOT NULL,
+  `progress` tinyint(4) NOT NULL,
+  `lock_latency` tinyint(4) NOT NULL,
+  `rows_examined` tinyint(4) NOT NULL,
+  `rows_sent` tinyint(4) NOT NULL,
+  `rows_affected` tinyint(4) NOT NULL,
+  `tmp_tables` tinyint(4) NOT NULL,
+  `tmp_disk_tables` tinyint(4) NOT NULL,
+  `full_scan` tinyint(4) NOT NULL,
+  `last_statement` tinyint(4) NOT NULL,
+  `last_statement_latency` tinyint(4) NOT NULL,
+  `current_memory` tinyint(4) NOT NULL,
+  `last_wait` tinyint(4) NOT NULL,
+  `last_wait_latency` tinyint(4) NOT NULL,
+  `source` tinyint(4) NOT NULL,
+  `trx_latency` tinyint(4) NOT NULL,
+  `trx_state` tinyint(4) NOT NULL,
+  `trx_autocommit` tinyint(4) NOT NULL,
+  `pid` tinyint(4) NOT NULL,
+  `program_name` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$processlist`
+--
+
+LOCK TABLES `x$processlist` WRITE;
+/*!40000 ALTER TABLE `x$processlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$processlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$ps_digest_95th_percentile_by_avg_us`
+--
+
+DROP TABLE IF EXISTS `x$ps_digest_95th_percentile_by_avg_us`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$ps_digest_95th_percentile_by_avg_us` (
+  `avg_us` tinyint(4) NOT NULL,
+  `percentile` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$ps_digest_95th_percentile_by_avg_us`
+--
+
+LOCK TABLES `x$ps_digest_95th_percentile_by_avg_us` WRITE;
+/*!40000 ALTER TABLE `x$ps_digest_95th_percentile_by_avg_us` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$ps_digest_95th_percentile_by_avg_us` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$ps_digest_avg_latency_distribution`
+--
+
+DROP TABLE IF EXISTS `x$ps_digest_avg_latency_distribution`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$ps_digest_avg_latency_distribution` (
+  `cnt` tinyint(4) NOT NULL,
+  `avg_us` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$ps_digest_avg_latency_distribution`
+--
+
+LOCK TABLES `x$ps_digest_avg_latency_distribution` WRITE;
+/*!40000 ALTER TABLE `x$ps_digest_avg_latency_distribution` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$ps_digest_avg_latency_distribution` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$ps_schema_table_statistics_io`
+--
+
+DROP TABLE IF EXISTS `x$ps_schema_table_statistics_io`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$ps_schema_table_statistics_io` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `count_read` tinyint(4) NOT NULL,
+  `sum_number_of_bytes_read` tinyint(4) NOT NULL,
+  `sum_timer_read` tinyint(4) NOT NULL,
+  `count_write` tinyint(4) NOT NULL,
+  `sum_number_of_bytes_write` tinyint(4) NOT NULL,
+  `sum_timer_write` tinyint(4) NOT NULL,
+  `count_misc` tinyint(4) NOT NULL,
+  `sum_timer_misc` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$ps_schema_table_statistics_io`
+--
+
+LOCK TABLES `x$ps_schema_table_statistics_io` WRITE;
+/*!40000 ALTER TABLE `x$ps_schema_table_statistics_io` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$ps_schema_table_statistics_io` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$schema_flattened_keys`
+--
+
+DROP TABLE IF EXISTS `x$schema_flattened_keys`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$schema_flattened_keys` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `index_name` tinyint(4) NOT NULL,
+  `non_unique` tinyint(4) NOT NULL,
+  `subpart_exists` tinyint(4) NOT NULL,
+  `index_columns` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$schema_flattened_keys`
+--
+
+LOCK TABLES `x$schema_flattened_keys` WRITE;
+/*!40000 ALTER TABLE `x$schema_flattened_keys` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$schema_flattened_keys` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$schema_index_statistics`
+--
+
+DROP TABLE IF EXISTS `x$schema_index_statistics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$schema_index_statistics` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `index_name` tinyint(4) NOT NULL,
+  `rows_selected` tinyint(4) NOT NULL,
+  `select_latency` tinyint(4) NOT NULL,
+  `rows_inserted` tinyint(4) NOT NULL,
+  `insert_latency` tinyint(4) NOT NULL,
+  `rows_updated` tinyint(4) NOT NULL,
+  `update_latency` tinyint(4) NOT NULL,
+  `rows_deleted` tinyint(4) NOT NULL,
+  `delete_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$schema_index_statistics`
+--
+
+LOCK TABLES `x$schema_index_statistics` WRITE;
+/*!40000 ALTER TABLE `x$schema_index_statistics` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$schema_index_statistics` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$schema_table_lock_waits`
+--
+
+DROP TABLE IF EXISTS `x$schema_table_lock_waits`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$schema_table_lock_waits` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `waiting_thread_id` tinyint(4) NOT NULL,
+  `waiting_pid` tinyint(4) NOT NULL,
+  `waiting_account` tinyint(4) NOT NULL,
+  `waiting_lock_type` tinyint(4) NOT NULL,
+  `waiting_lock_duration` tinyint(4) NOT NULL,
+  `waiting_query` tinyint(4) NOT NULL,
+  `waiting_query_secs` tinyint(4) NOT NULL,
+  `waiting_query_rows_affected` tinyint(4) NOT NULL,
+  `waiting_query_rows_examined` tinyint(4) NOT NULL,
+  `blocking_thread_id` tinyint(4) NOT NULL,
+  `blocking_pid` tinyint(4) NOT NULL,
+  `blocking_account` tinyint(4) NOT NULL,
+  `blocking_lock_type` tinyint(4) NOT NULL,
+  `blocking_lock_duration` tinyint(4) NOT NULL,
+  `sql_kill_blocking_query` tinyint(4) NOT NULL,
+  `sql_kill_blocking_connection` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$schema_table_lock_waits`
+--
+
+LOCK TABLES `x$schema_table_lock_waits` WRITE;
+/*!40000 ALTER TABLE `x$schema_table_lock_waits` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$schema_table_lock_waits` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$schema_table_statistics`
+--
+
+DROP TABLE IF EXISTS `x$schema_table_statistics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$schema_table_statistics` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `total_latency` tinyint(4) NOT NULL,
+  `rows_fetched` tinyint(4) NOT NULL,
+  `fetch_latency` tinyint(4) NOT NULL,
+  `rows_inserted` tinyint(4) NOT NULL,
+  `insert_latency` tinyint(4) NOT NULL,
+  `rows_updated` tinyint(4) NOT NULL,
+  `update_latency` tinyint(4) NOT NULL,
+  `rows_deleted` tinyint(4) NOT NULL,
+  `delete_latency` tinyint(4) NOT NULL,
+  `io_read_requests` tinyint(4) NOT NULL,
+  `io_read` tinyint(4) NOT NULL,
+  `io_read_latency` tinyint(4) NOT NULL,
+  `io_write_requests` tinyint(4) NOT NULL,
+  `io_write` tinyint(4) NOT NULL,
+  `io_write_latency` tinyint(4) NOT NULL,
+  `io_misc_requests` tinyint(4) NOT NULL,
+  `io_misc_latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$schema_table_statistics`
+--
+
+LOCK TABLES `x$schema_table_statistics` WRITE;
+/*!40000 ALTER TABLE `x$schema_table_statistics` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$schema_table_statistics` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$schema_table_statistics_with_buffer`
+--
+
+DROP TABLE IF EXISTS `x$schema_table_statistics_with_buffer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$schema_table_statistics_with_buffer` (
+  `table_schema` tinyint(4) NOT NULL,
+  `table_name` tinyint(4) NOT NULL,
+  `rows_fetched` tinyint(4) NOT NULL,
+  `fetch_latency` tinyint(4) NOT NULL,
+  `rows_inserted` tinyint(4) NOT NULL,
+  `insert_latency` tinyint(4) NOT NULL,
+  `rows_updated` tinyint(4) NOT NULL,
+  `update_latency` tinyint(4) NOT NULL,
+  `rows_deleted` tinyint(4) NOT NULL,
+  `delete_latency` tinyint(4) NOT NULL,
+  `io_read_requests` tinyint(4) NOT NULL,
+  `io_read` tinyint(4) NOT NULL,
+  `io_read_latency` tinyint(4) NOT NULL,
+  `io_write_requests` tinyint(4) NOT NULL,
+  `io_write` tinyint(4) NOT NULL,
+  `io_write_latency` tinyint(4) NOT NULL,
+  `io_misc_requests` tinyint(4) NOT NULL,
+  `io_misc_latency` tinyint(4) NOT NULL,
+  `innodb_buffer_allocated` tinyint(4) NOT NULL,
+  `innodb_buffer_data` tinyint(4) NOT NULL,
+  `innodb_buffer_free` tinyint(4) NOT NULL,
+  `innodb_buffer_pages` tinyint(4) NOT NULL,
+  `innodb_buffer_pages_hashed` tinyint(4) NOT NULL,
+  `innodb_buffer_pages_old` tinyint(4) NOT NULL,
+  `innodb_buffer_rows_cached` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$schema_table_statistics_with_buffer`
+--
+
+LOCK TABLES `x$schema_table_statistics_with_buffer` WRITE;
+/*!40000 ALTER TABLE `x$schema_table_statistics_with_buffer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$schema_table_statistics_with_buffer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `x$schema_tables_with_full_table_scans`
+--
+
+DROP TABLE IF EXISTS `x$schema_tables_with_full_table_scans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `x$schema_tables_with_full_table_scans` (
+  `object_schema` tinyint(4) NOT NULL,
+  `object_name` tinyint(4) NOT NULL,
+  `rows_full_scanned` tinyint(4) NOT NULL,
+  `latency` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `x$schema_tables_with_full_table_scans`
+--
+
+LOCK TABLES `x$schema_tables_with_full_table_scans` WRITE;
+/*!40000 ALTER TABLE `x$schema_tables_with_full_table_scans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `x$schema_tables_with_full_table_scans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `x$statement_analysis`
+--
+
+DROP TABLE IF EXISTS `x$statement_analysis`;
+/*!50001 DROP VIEW IF EXISTS `x$statement_analysis`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user_summary` (
+/*!50001 CREATE TABLE `x$statement_analysis` (
+  `query` tinyint NOT NULL,
+  `db` tinyint NOT NULL,
+  `full_scan` tinyint NOT NULL,
+  `exec_count` tinyint NOT NULL,
+  `err_count` tinyint NOT NULL,
+  `warn_count` tinyint NOT NULL,
+  `total_latency` tinyint NOT NULL,
+  `max_latency` tinyint NOT NULL,
+  `avg_latency` tinyint NOT NULL,
+  `lock_latency` tinyint NOT NULL,
+  `rows_sent` tinyint NOT NULL,
+  `rows_sent_avg` tinyint NOT NULL,
+  `rows_examined` tinyint NOT NULL,
+  `rows_examined_avg` tinyint NOT NULL,
+  `rows_affected` tinyint NOT NULL,
+  `rows_affected_avg` tinyint NOT NULL,
+  `tmp_tables` tinyint NOT NULL,
+  `tmp_disk_tables` tinyint NOT NULL,
+  `rows_sorted` tinyint NOT NULL,
+  `sort_merge_passes` tinyint NOT NULL,
+  `digest` tinyint NOT NULL,
+  `first_seen` tinyint NOT NULL,
+  `last_seen` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `x$statements_with_errors_or_warnings`
+--
+
+DROP TABLE IF EXISTS `x$statements_with_errors_or_warnings`;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_errors_or_warnings`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `x$statements_with_errors_or_warnings` (
+  `query` tinyint NOT NULL,
+  `db` tinyint NOT NULL,
+  `exec_count` tinyint NOT NULL,
+  `errors` tinyint NOT NULL,
+  `error_pct` tinyint NOT NULL,
+  `warnings` tinyint NOT NULL,
+  `warning_pct` tinyint NOT NULL,
+  `first_seen` tinyint NOT NULL,
+  `last_seen` tinyint NOT NULL,
+  `digest` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `x$statements_with_full_table_scans`
+--
+
+DROP TABLE IF EXISTS `x$statements_with_full_table_scans`;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_full_table_scans`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `x$statements_with_full_table_scans` (
+  `query` tinyint NOT NULL,
+  `db` tinyint NOT NULL,
+  `exec_count` tinyint NOT NULL,
+  `total_latency` tinyint NOT NULL,
+  `no_index_used_count` tinyint NOT NULL,
+  `no_good_index_used_count` tinyint NOT NULL,
+  `no_index_used_pct` tinyint NOT NULL,
+  `rows_sent` tinyint NOT NULL,
+  `rows_examined` tinyint NOT NULL,
+  `rows_sent_avg` tinyint NOT NULL,
+  `rows_examined_avg` tinyint NOT NULL,
+  `first_seen` tinyint NOT NULL,
+  `last_seen` tinyint NOT NULL,
+  `digest` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `x$statements_with_runtimes_in_95th_percentile`
+--
+
+DROP TABLE IF EXISTS `x$statements_with_runtimes_in_95th_percentile`;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_runtimes_in_95th_percentile`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `x$statements_with_runtimes_in_95th_percentile` (
+  `query` tinyint NOT NULL,
+  `db` tinyint NOT NULL,
+  `full_scan` tinyint NOT NULL,
+  `exec_count` tinyint NOT NULL,
+  `err_count` tinyint NOT NULL,
+  `warn_count` tinyint NOT NULL,
+  `total_latency` tinyint NOT NULL,
+  `max_latency` tinyint NOT NULL,
+  `avg_latency` tinyint NOT NULL,
+  `rows_sent` tinyint NOT NULL,
+  `rows_sent_avg` tinyint NOT NULL,
+  `rows_examined` tinyint NOT NULL,
+  `rows_examined_avg` tinyint NOT NULL,
+  `first_seen` tinyint NOT NULL,
+  `last_seen` tinyint NOT NULL,
+  `digest` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `x$statements_with_sorting`
+--
+
+DROP TABLE IF EXISTS `x$statements_with_sorting`;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_sorting`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `x$statements_with_sorting` (
+  `query` tinyint NOT NULL,
+  `db` tinyint NOT NULL,
+  `exec_count` tinyint NOT NULL,
+  `total_latency` tinyint NOT NULL,
+  `sort_merge_passes` tinyint NOT NULL,
+  `avg_sort_merges` tinyint NOT NULL,
+  `sorts_using_scans` tinyint NOT NULL,
+  `sort_using_range` tinyint NOT NULL,
+  `rows_sorted` tinyint NOT NULL,
+  `avg_rows_sorted` tinyint NOT NULL,
+  `first_seen` tinyint NOT NULL,
+  `last_seen` tinyint NOT NULL,
+  `digest` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `x$statements_with_temp_tables`
+--
+
+DROP TABLE IF EXISTS `x$statements_with_temp_tables`;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_temp_tables`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `x$statements_with_temp_tables` (
+  `query` tinyint NOT NULL,
+  `db` tinyint NOT NULL,
+  `exec_count` tinyint NOT NULL,
+  `total_latency` tinyint NOT NULL,
+  `memory_tmp_tables` tinyint NOT NULL,
+  `disk_tmp_tables` tinyint NOT NULL,
+  `avg_tmp_tables_per_query` tinyint NOT NULL,
+  `tmp_tables_to_disk_pct` tinyint NOT NULL,
+  `first_seen` tinyint NOT NULL,
+  `last_seen` tinyint NOT NULL,
+  `digest` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `x$user_summary`
+--
+
+DROP TABLE IF EXISTS `x$user_summary`;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `x$user_summary` (
   `user` tinyint NOT NULL,
   `statements` tinyint NOT NULL,
   `statement_latency` tinyint NOT NULL,
@@ -1975,14 +3672,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `user_summary_by_file_io`
+-- Temporary table structure for view `x$user_summary_by_file_io`
 --
 
-DROP TABLE IF EXISTS `user_summary_by_file_io`;
-/*!50001 DROP VIEW IF EXISTS `user_summary_by_file_io`*/;
+DROP TABLE IF EXISTS `x$user_summary_by_file_io`;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_file_io`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user_summary_by_file_io` (
+/*!50001 CREATE TABLE `x$user_summary_by_file_io` (
   `user` tinyint NOT NULL,
   `ios` tinyint NOT NULL,
   `io_latency` tinyint NOT NULL
@@ -1990,14 +3687,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `user_summary_by_file_io_type`
+-- Temporary table structure for view `x$user_summary_by_file_io_type`
 --
 
-DROP TABLE IF EXISTS `user_summary_by_file_io_type`;
-/*!50001 DROP VIEW IF EXISTS `user_summary_by_file_io_type`*/;
+DROP TABLE IF EXISTS `x$user_summary_by_file_io_type`;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_file_io_type`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user_summary_by_file_io_type` (
+/*!50001 CREATE TABLE `x$user_summary_by_file_io_type` (
   `user` tinyint NOT NULL,
   `event_name` tinyint NOT NULL,
   `total` tinyint NOT NULL,
@@ -2007,14 +3704,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `user_summary_by_stages`
+-- Temporary table structure for view `x$user_summary_by_stages`
 --
 
-DROP TABLE IF EXISTS `user_summary_by_stages`;
-/*!50001 DROP VIEW IF EXISTS `user_summary_by_stages`*/;
+DROP TABLE IF EXISTS `x$user_summary_by_stages`;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_stages`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user_summary_by_stages` (
+/*!50001 CREATE TABLE `x$user_summary_by_stages` (
   `user` tinyint NOT NULL,
   `event_name` tinyint NOT NULL,
   `total` tinyint NOT NULL,
@@ -2024,14 +3721,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `user_summary_by_statement_latency`
+-- Temporary table structure for view `x$user_summary_by_statement_latency`
 --
 
-DROP TABLE IF EXISTS `user_summary_by_statement_latency`;
-/*!50001 DROP VIEW IF EXISTS `user_summary_by_statement_latency`*/;
+DROP TABLE IF EXISTS `x$user_summary_by_statement_latency`;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_statement_latency`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user_summary_by_statement_latency` (
+/*!50001 CREATE TABLE `x$user_summary_by_statement_latency` (
   `user` tinyint NOT NULL,
   `total` tinyint NOT NULL,
   `total_latency` tinyint NOT NULL,
@@ -2045,14 +3742,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `user_summary_by_statement_type`
+-- Temporary table structure for view `x$user_summary_by_statement_type`
 --
 
-DROP TABLE IF EXISTS `user_summary_by_statement_type`;
-/*!50001 DROP VIEW IF EXISTS `user_summary_by_statement_type`*/;
+DROP TABLE IF EXISTS `x$user_summary_by_statement_type`;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_statement_type`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `user_summary_by_statement_type` (
+/*!50001 CREATE TABLE `x$user_summary_by_statement_type` (
   `user` tinyint NOT NULL,
   `statement` tinyint NOT NULL,
   `total` tinyint NOT NULL,
@@ -2067,28 +3764,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `version`
+-- Temporary table structure for view `x$wait_classes_global_by_avg_latency`
 --
 
-DROP TABLE IF EXISTS `version`;
-/*!50001 DROP VIEW IF EXISTS `version`*/;
+DROP TABLE IF EXISTS `x$wait_classes_global_by_avg_latency`;
+/*!50001 DROP VIEW IF EXISTS `x$wait_classes_global_by_avg_latency`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `version` (
-  `sys_version` tinyint NOT NULL,
-  `mysql_version` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `wait_classes_global_by_avg_latency`
---
-
-DROP TABLE IF EXISTS `wait_classes_global_by_avg_latency`;
-/*!50001 DROP VIEW IF EXISTS `wait_classes_global_by_avg_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `wait_classes_global_by_avg_latency` (
+/*!50001 CREATE TABLE `x$wait_classes_global_by_avg_latency` (
   `event_class` tinyint NOT NULL,
   `total` tinyint NOT NULL,
   `total_latency` tinyint NOT NULL,
@@ -2099,14 +3782,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `wait_classes_global_by_latency`
+-- Temporary table structure for view `x$wait_classes_global_by_latency`
 --
 
-DROP TABLE IF EXISTS `wait_classes_global_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `wait_classes_global_by_latency`*/;
+DROP TABLE IF EXISTS `x$wait_classes_global_by_latency`;
+/*!50001 DROP VIEW IF EXISTS `x$wait_classes_global_by_latency`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `wait_classes_global_by_latency` (
+/*!50001 CREATE TABLE `x$wait_classes_global_by_latency` (
   `event_class` tinyint NOT NULL,
   `total` tinyint NOT NULL,
   `total_latency` tinyint NOT NULL,
@@ -2117,14 +3800,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `waits_by_host_by_latency`
+-- Temporary table structure for view `x$waits_by_host_by_latency`
 --
 
-DROP TABLE IF EXISTS `waits_by_host_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `waits_by_host_by_latency`*/;
+DROP TABLE IF EXISTS `x$waits_by_host_by_latency`;
+/*!50001 DROP VIEW IF EXISTS `x$waits_by_host_by_latency`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `waits_by_host_by_latency` (
+/*!50001 CREATE TABLE `x$waits_by_host_by_latency` (
   `host` tinyint NOT NULL,
   `event` tinyint NOT NULL,
   `total` tinyint NOT NULL,
@@ -2135,14 +3818,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `waits_by_user_by_latency`
+-- Temporary table structure for view `x$waits_by_user_by_latency`
 --
 
-DROP TABLE IF EXISTS `waits_by_user_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `waits_by_user_by_latency`*/;
+DROP TABLE IF EXISTS `x$waits_by_user_by_latency`;
+/*!50001 DROP VIEW IF EXISTS `x$waits_by_user_by_latency`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `waits_by_user_by_latency` (
+/*!50001 CREATE TABLE `x$waits_by_user_by_latency` (
   `user` tinyint NOT NULL,
   `event` tinyint NOT NULL,
   `total` tinyint NOT NULL,
@@ -2153,14 +3836,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `waits_global_by_latency`
+-- Temporary table structure for view `x$waits_global_by_latency`
 --
 
-DROP TABLE IF EXISTS `waits_global_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `waits_global_by_latency`*/;
+DROP TABLE IF EXISTS `x$waits_global_by_latency`;
+/*!50001 DROP VIEW IF EXISTS `x$waits_global_by_latency`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `waits_global_by_latency` (
+/*!50001 CREATE TABLE `x$waits_global_by_latency` (
   `events` tinyint NOT NULL,
   `total` tinyint NOT NULL,
   `total_latency` tinyint NOT NULL,
@@ -2170,683 +3853,353 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `x$host_summary`
+-- Current Database: `ijdb`
 --
 
-DROP TABLE IF EXISTS `x$host_summary`;
-/*!50001 DROP VIEW IF EXISTS `x$host_summary`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$host_summary` (
-  `host` tinyint NOT NULL,
-  `statements` tinyint NOT NULL,
-  `statement_latency` tinyint NOT NULL,
-  `statement_avg_latency` tinyint NOT NULL,
-  `table_scans` tinyint NOT NULL,
-  `file_ios` tinyint NOT NULL,
-  `file_io_latency` tinyint NOT NULL,
-  `current_connections` tinyint NOT NULL,
-  `total_connections` tinyint NOT NULL,
-  `unique_users` tinyint NOT NULL,
-  `current_memory` tinyint NOT NULL,
-  `total_memory_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+USE `ijdb`;
 
 --
--- Temporary table structure for view `x$host_summary_by_file_io`
+-- Current Database: `mysql`
 --
 
-DROP TABLE IF EXISTS `x$host_summary_by_file_io`;
-/*!50001 DROP VIEW IF EXISTS `x$host_summary_by_file_io`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$host_summary_by_file_io` (
-  `host` tinyint NOT NULL,
-  `ios` tinyint NOT NULL,
-  `io_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+USE `mysql`;
 
 --
--- Temporary table structure for view `x$host_summary_by_file_io_type`
+-- Current Database: `sys`
 --
 
-DROP TABLE IF EXISTS `x$host_summary_by_file_io_type`;
-/*!50001 DROP VIEW IF EXISTS `x$host_summary_by_file_io_type`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$host_summary_by_file_io_type` (
-  `host` tinyint NOT NULL,
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+USE `sys`;
 
 --
--- Temporary table structure for view `x$host_summary_by_stages`
+-- Final view structure for view `x$statement_analysis`
 --
 
-DROP TABLE IF EXISTS `x$host_summary_by_stages`;
-/*!50001 DROP VIEW IF EXISTS `x$host_summary_by_stages`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$host_summary_by_stages` (
-  `host` tinyint NOT NULL,
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$statement_analysis`*/;
+/*!50001 DROP VIEW IF EXISTS `x$statement_analysis`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$statement_analysis` AS select `performance_schema`.`events_statements_summary_by_digest`.`DIGEST_TEXT` AS `query`,`performance_schema`.`events_statements_summary_by_digest`.`SCHEMA_NAME` AS `db`,if(`performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_GOOD_INDEX_USED` > 0 or `performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_INDEX_USED` > 0,'*','') AS `full_scan`,`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR` AS `exec_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ERRORS` AS `err_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_WARNINGS` AS `warn_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_statements_summary_by_digest`.`MAX_TIMER_WAIT` AS `max_latency`,`performance_schema`.`events_statements_summary_by_digest`.`AVG_TIMER_WAIT` AS `avg_latency`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_LOCK_TIME` AS `lock_latency`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_SENT` AS `rows_sent`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_SENT` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0),0) AS `rows_sent_avg`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_EXAMINED` AS `rows_examined`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_EXAMINED` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0),0) AS `rows_examined_avg`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_AFFECTED` AS `rows_affected`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_AFFECTED` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0),0) AS `rows_affected_avg`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_TABLES` AS `tmp_tables`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_DISK_TABLES` AS `tmp_disk_tables`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_ROWS` AS `rows_sorted`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_MERGE_PASSES` AS `sort_merge_passes`,`performance_schema`.`events_statements_summary_by_digest`.`DIGEST` AS `digest`,`performance_schema`.`events_statements_summary_by_digest`.`FIRST_SEEN` AS `first_seen`,`performance_schema`.`events_statements_summary_by_digest`.`LAST_SEEN` AS `last_seen` from `performance_schema`.`events_statements_summary_by_digest` order by `performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$host_summary_by_statement_latency`
+-- Final view structure for view `x$statements_with_errors_or_warnings`
 --
 
-DROP TABLE IF EXISTS `x$host_summary_by_statement_latency`;
-/*!50001 DROP VIEW IF EXISTS `x$host_summary_by_statement_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$host_summary_by_statement_latency` (
-  `host` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `full_scans` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$statements_with_errors_or_warnings`*/;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_errors_or_warnings`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$statements_with_errors_or_warnings` AS select `performance_schema`.`events_statements_summary_by_digest`.`DIGEST_TEXT` AS `query`,`performance_schema`.`events_statements_summary_by_digest`.`SCHEMA_NAME` AS `db`,`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR` AS `exec_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ERRORS` AS `errors`,ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_ERRORS` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0) * 100 AS `error_pct`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_WARNINGS` AS `warnings`,ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_WARNINGS` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0) * 100 AS `warning_pct`,`performance_schema`.`events_statements_summary_by_digest`.`FIRST_SEEN` AS `first_seen`,`performance_schema`.`events_statements_summary_by_digest`.`LAST_SEEN` AS `last_seen`,`performance_schema`.`events_statements_summary_by_digest`.`DIGEST` AS `digest` from `performance_schema`.`events_statements_summary_by_digest` where `performance_schema`.`events_statements_summary_by_digest`.`SUM_ERRORS` > 0 or `performance_schema`.`events_statements_summary_by_digest`.`SUM_WARNINGS` > 0 order by `performance_schema`.`events_statements_summary_by_digest`.`SUM_ERRORS` desc,`performance_schema`.`events_statements_summary_by_digest`.`SUM_WARNINGS` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$host_summary_by_statement_type`
+-- Final view structure for view `x$statements_with_full_table_scans`
 --
 
-DROP TABLE IF EXISTS `x$host_summary_by_statement_type`;
-/*!50001 DROP VIEW IF EXISTS `x$host_summary_by_statement_type`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$host_summary_by_statement_type` (
-  `host` tinyint NOT NULL,
-  `statement` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `full_scans` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$statements_with_full_table_scans`*/;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_full_table_scans`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$statements_with_full_table_scans` AS select `performance_schema`.`events_statements_summary_by_digest`.`DIGEST_TEXT` AS `query`,`performance_schema`.`events_statements_summary_by_digest`.`SCHEMA_NAME` AS `db`,`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR` AS `exec_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_INDEX_USED` AS `no_index_used_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_GOOD_INDEX_USED` AS `no_good_index_used_count`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_INDEX_USED` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0) * 100,0) AS `no_index_used_pct`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_SENT` AS `rows_sent`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_EXAMINED` AS `rows_examined`,round(`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_SENT` / `performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0) AS `rows_sent_avg`,round(`performance_schema`.`events_statements_summary_by_digest`.`SUM_ROWS_EXAMINED` / `performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0) AS `rows_examined_avg`,`performance_schema`.`events_statements_summary_by_digest`.`FIRST_SEEN` AS `first_seen`,`performance_schema`.`events_statements_summary_by_digest`.`LAST_SEEN` AS `last_seen`,`performance_schema`.`events_statements_summary_by_digest`.`DIGEST` AS `digest` from `performance_schema`.`events_statements_summary_by_digest` where (`performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_INDEX_USED` > 0 or `performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_GOOD_INDEX_USED` > 0) and `performance_schema`.`events_statements_summary_by_digest`.`DIGEST_TEXT`  not like 'SHOW%' order by round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_NO_INDEX_USED` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0) * 100,0) desc,`performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$innodb_buffer_stats_by_schema`
+-- Final view structure for view `x$statements_with_runtimes_in_95th_percentile`
 --
 
-DROP TABLE IF EXISTS `x$innodb_buffer_stats_by_schema`;
-/*!50001 DROP VIEW IF EXISTS `x$innodb_buffer_stats_by_schema`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$innodb_buffer_stats_by_schema` (
-  `object_schema` tinyint NOT NULL,
-  `allocated` tinyint NOT NULL,
-  `data` tinyint NOT NULL,
-  `pages` tinyint NOT NULL,
-  `pages_hashed` tinyint NOT NULL,
-  `pages_old` tinyint NOT NULL,
-  `rows_cached` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$statements_with_runtimes_in_95th_percentile`*/;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_runtimes_in_95th_percentile`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$statements_with_runtimes_in_95th_percentile` AS select `stmts`.`DIGEST_TEXT` AS `query`,`stmts`.`SCHEMA_NAME` AS `db`,if(`stmts`.`SUM_NO_GOOD_INDEX_USED` > 0 or `stmts`.`SUM_NO_INDEX_USED` > 0,'*','') AS `full_scan`,`stmts`.`COUNT_STAR` AS `exec_count`,`stmts`.`SUM_ERRORS` AS `err_count`,`stmts`.`SUM_WARNINGS` AS `warn_count`,`stmts`.`SUM_TIMER_WAIT` AS `total_latency`,`stmts`.`MAX_TIMER_WAIT` AS `max_latency`,`stmts`.`AVG_TIMER_WAIT` AS `avg_latency`,`stmts`.`SUM_ROWS_SENT` AS `rows_sent`,round(ifnull(`stmts`.`SUM_ROWS_SENT` / nullif(`stmts`.`COUNT_STAR`,0),0),0) AS `rows_sent_avg`,`stmts`.`SUM_ROWS_EXAMINED` AS `rows_examined`,round(ifnull(`stmts`.`SUM_ROWS_EXAMINED` / nullif(`stmts`.`COUNT_STAR`,0),0),0) AS `rows_examined_avg`,`stmts`.`FIRST_SEEN` AS `first_seen`,`stmts`.`LAST_SEEN` AS `last_seen`,`stmts`.`DIGEST` AS `digest` from (`performance_schema`.`events_statements_summary_by_digest` `stmts` join `sys`.`x$ps_digest_95th_percentile_by_avg_us` `top_percentile` on(round(`stmts`.`AVG_TIMER_WAIT` / 1000000,0) >= `top_percentile`.`avg_us`)) order by `stmts`.`AVG_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$innodb_buffer_stats_by_table`
+-- Final view structure for view `x$statements_with_sorting`
 --
 
-DROP TABLE IF EXISTS `x$innodb_buffer_stats_by_table`;
-/*!50001 DROP VIEW IF EXISTS `x$innodb_buffer_stats_by_table`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$innodb_buffer_stats_by_table` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `allocated` tinyint NOT NULL,
-  `data` tinyint NOT NULL,
-  `pages` tinyint NOT NULL,
-  `pages_hashed` tinyint NOT NULL,
-  `pages_old` tinyint NOT NULL,
-  `rows_cached` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$statements_with_sorting`*/;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_sorting`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$statements_with_sorting` AS select `performance_schema`.`events_statements_summary_by_digest`.`DIGEST_TEXT` AS `query`,`performance_schema`.`events_statements_summary_by_digest`.`SCHEMA_NAME` AS `db`,`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR` AS `exec_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_MERGE_PASSES` AS `sort_merge_passes`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_MERGE_PASSES` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0),0) AS `avg_sort_merges`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_SCAN` AS `sorts_using_scans`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_RANGE` AS `sort_using_range`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_ROWS` AS `rows_sorted`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_ROWS` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0),0) AS `avg_rows_sorted`,`performance_schema`.`events_statements_summary_by_digest`.`FIRST_SEEN` AS `first_seen`,`performance_schema`.`events_statements_summary_by_digest`.`LAST_SEEN` AS `last_seen`,`performance_schema`.`events_statements_summary_by_digest`.`DIGEST` AS `digest` from `performance_schema`.`events_statements_summary_by_digest` where `performance_schema`.`events_statements_summary_by_digest`.`SUM_SORT_ROWS` > 0 order by `performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$innodb_lock_waits`
+-- Final view structure for view `x$statements_with_temp_tables`
 --
 
-DROP TABLE IF EXISTS `x$innodb_lock_waits`;
-/*!50001 DROP VIEW IF EXISTS `x$innodb_lock_waits`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$innodb_lock_waits` (
-  `wait_started` tinyint NOT NULL,
-  `wait_age` tinyint NOT NULL,
-  `wait_age_secs` tinyint NOT NULL,
-  `locked_table` tinyint NOT NULL,
-  `locked_index` tinyint NOT NULL,
-  `locked_type` tinyint NOT NULL,
-  `waiting_trx_id` tinyint NOT NULL,
-  `waiting_trx_started` tinyint NOT NULL,
-  `waiting_trx_age` tinyint NOT NULL,
-  `waiting_trx_rows_locked` tinyint NOT NULL,
-  `waiting_trx_rows_modified` tinyint NOT NULL,
-  `waiting_pid` tinyint NOT NULL,
-  `waiting_query` tinyint NOT NULL,
-  `waiting_lock_id` tinyint NOT NULL,
-  `waiting_lock_mode` tinyint NOT NULL,
-  `blocking_trx_id` tinyint NOT NULL,
-  `blocking_pid` tinyint NOT NULL,
-  `blocking_query` tinyint NOT NULL,
-  `blocking_lock_id` tinyint NOT NULL,
-  `blocking_lock_mode` tinyint NOT NULL,
-  `blocking_trx_started` tinyint NOT NULL,
-  `blocking_trx_age` tinyint NOT NULL,
-  `blocking_trx_rows_locked` tinyint NOT NULL,
-  `blocking_trx_rows_modified` tinyint NOT NULL,
-  `sql_kill_blocking_query` tinyint NOT NULL,
-  `sql_kill_blocking_connection` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$statements_with_temp_tables`*/;
+/*!50001 DROP VIEW IF EXISTS `x$statements_with_temp_tables`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$statements_with_temp_tables` AS select `performance_schema`.`events_statements_summary_by_digest`.`DIGEST_TEXT` AS `query`,`performance_schema`.`events_statements_summary_by_digest`.`SCHEMA_NAME` AS `db`,`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR` AS `exec_count`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_TABLES` AS `memory_tmp_tables`,`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_DISK_TABLES` AS `disk_tmp_tables`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_TABLES` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`COUNT_STAR`,0),0),0) AS `avg_tmp_tables_per_query`,round(ifnull(`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_DISK_TABLES` / nullif(`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_TABLES`,0),0) * 100,0) AS `tmp_tables_to_disk_pct`,`performance_schema`.`events_statements_summary_by_digest`.`FIRST_SEEN` AS `first_seen`,`performance_schema`.`events_statements_summary_by_digest`.`LAST_SEEN` AS `last_seen`,`performance_schema`.`events_statements_summary_by_digest`.`DIGEST` AS `digest` from `performance_schema`.`events_statements_summary_by_digest` where `performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_TABLES` > 0 order by `performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_DISK_TABLES` desc,`performance_schema`.`events_statements_summary_by_digest`.`SUM_CREATED_TMP_TABLES` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$io_by_thread_by_latency`
+-- Final view structure for view `x$user_summary`
 --
 
-DROP TABLE IF EXISTS `x$io_by_thread_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `x$io_by_thread_by_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$io_by_thread_by_latency` (
-  `user` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `min_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `thread_id` tinyint NOT NULL,
-  `processlist_id` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$user_summary`*/;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=TEMPTABLE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$user_summary` AS select if(`performance_schema`.`accounts`.`USER` is null,'background',`performance_schema`.`accounts`.`USER`) AS `user`,sum(`stmt`.`total`) AS `statements`,sum(`stmt`.`total_latency`) AS `statement_latency`,ifnull(sum(`stmt`.`total_latency`) / nullif(sum(`stmt`.`total`),0),0) AS `statement_avg_latency`,sum(`stmt`.`full_scans`) AS `table_scans`,sum(`io`.`ios`) AS `file_ios`,sum(`io`.`io_latency`) AS `file_io_latency`,sum(`performance_schema`.`accounts`.`CURRENT_CONNECTIONS`) AS `current_connections`,sum(`performance_schema`.`accounts`.`TOTAL_CONNECTIONS`) AS `total_connections`,count(distinct `performance_schema`.`accounts`.`HOST`) AS `unique_hosts`,sum(`mem`.`current_allocated`) AS `current_memory`,sum(`mem`.`total_allocated`) AS `total_memory_allocated` from (((`performance_schema`.`accounts` left join `sys`.`x$user_summary_by_statement_latency` `stmt` on(if(`performance_schema`.`accounts`.`USER` is null,'background',`performance_schema`.`accounts`.`USER`) = `stmt`.`user`)) left join `sys`.`x$user_summary_by_file_io` `io` on(if(`performance_schema`.`accounts`.`USER` is null,'background',`performance_schema`.`accounts`.`USER`) = `io`.`user`)) left join `sys`.`x$memory_by_user_by_current_bytes` `mem` on(if(`performance_schema`.`accounts`.`USER` is null,'background',`performance_schema`.`accounts`.`USER`) = `mem`.`user`)) group by if(`performance_schema`.`accounts`.`USER` is null,'background',`performance_schema`.`accounts`.`USER`) order by sum(`stmt`.`total_latency`) desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$io_global_by_file_by_bytes`
+-- Final view structure for view `x$user_summary_by_file_io`
 --
 
-DROP TABLE IF EXISTS `x$io_global_by_file_by_bytes`;
-/*!50001 DROP VIEW IF EXISTS `x$io_global_by_file_by_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$io_global_by_file_by_bytes` (
-  `file` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `total_read` tinyint NOT NULL,
-  `avg_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `total_written` tinyint NOT NULL,
-  `avg_write` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `write_pct` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$user_summary_by_file_io`*/;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_file_io`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=TEMPTABLE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$user_summary_by_file_io` AS select if(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER`) AS `user`,sum(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`COUNT_STAR`) AS `ios`,sum(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT`) AS `io_latency` from `performance_schema`.`events_waits_summary_by_user_by_event_name` where `performance_schema`.`events_waits_summary_by_user_by_event_name`.`EVENT_NAME` like 'wait/io/file/%' group by if(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER`) order by sum(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT`) desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$io_global_by_file_by_latency`
+-- Final view structure for view `x$user_summary_by_file_io_type`
 --
 
-DROP TABLE IF EXISTS `x$io_global_by_file_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `x$io_global_by_file_by_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$io_global_by_file_by_latency` (
-  `file` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `read_latency` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `write_latency` tinyint NOT NULL,
-  `count_misc` tinyint NOT NULL,
-  `misc_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$user_summary_by_file_io_type`*/;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_file_io_type`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$user_summary_by_file_io_type` AS select if(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER`) AS `user`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`EVENT_NAME` AS `event_name`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`COUNT_STAR` AS `total`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` AS `latency`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`MAX_TIMER_WAIT` AS `max_latency` from `performance_schema`.`events_waits_summary_by_user_by_event_name` where `performance_schema`.`events_waits_summary_by_user_by_event_name`.`EVENT_NAME` like 'wait/io/file%' and `performance_schema`.`events_waits_summary_by_user_by_event_name`.`COUNT_STAR` > 0 order by if(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER`),`performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$io_global_by_wait_by_bytes`
+-- Final view structure for view `x$user_summary_by_stages`
 --
 
-DROP TABLE IF EXISTS `x$io_global_by_wait_by_bytes`;
-/*!50001 DROP VIEW IF EXISTS `x$io_global_by_wait_by_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$io_global_by_wait_by_bytes` (
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `min_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `total_read` tinyint NOT NULL,
-  `avg_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `total_written` tinyint NOT NULL,
-  `avg_written` tinyint NOT NULL,
-  `total_requested` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$user_summary_by_stages`*/;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_stages`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$user_summary_by_stages` AS select if(`performance_schema`.`events_stages_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_stages_summary_by_user_by_event_name`.`USER`) AS `user`,`performance_schema`.`events_stages_summary_by_user_by_event_name`.`EVENT_NAME` AS `event_name`,`performance_schema`.`events_stages_summary_by_user_by_event_name`.`COUNT_STAR` AS `total`,`performance_schema`.`events_stages_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_stages_summary_by_user_by_event_name`.`AVG_TIMER_WAIT` AS `avg_latency` from `performance_schema`.`events_stages_summary_by_user_by_event_name` where `performance_schema`.`events_stages_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` <> 0 order by if(`performance_schema`.`events_stages_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_stages_summary_by_user_by_event_name`.`USER`),`performance_schema`.`events_stages_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$io_global_by_wait_by_latency`
+-- Final view structure for view `x$user_summary_by_statement_latency`
 --
 
-DROP TABLE IF EXISTS `x$io_global_by_wait_by_latency`;
-/*!50001 DROP VIEW IF EXISTS `x$io_global_by_wait_by_latency`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$io_global_by_wait_by_latency` (
-  `event_name` tinyint NOT NULL,
-  `total` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `avg_latency` tinyint NOT NULL,
-  `max_latency` tinyint NOT NULL,
-  `read_latency` tinyint NOT NULL,
-  `write_latency` tinyint NOT NULL,
-  `misc_latency` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `total_read` tinyint NOT NULL,
-  `avg_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `total_written` tinyint NOT NULL,
-  `avg_written` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$user_summary_by_statement_latency`*/;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_statement_latency`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=TEMPTABLE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$user_summary_by_statement_latency` AS select if(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER`) AS `user`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`COUNT_STAR`) AS `total`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_TIMER_WAIT`) AS `total_latency`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`MAX_TIMER_WAIT`) AS `max_latency`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_LOCK_TIME`) AS `lock_latency`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_ROWS_SENT`) AS `rows_sent`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_ROWS_EXAMINED`) AS `rows_examined`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_ROWS_AFFECTED`) AS `rows_affected`,sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_NO_INDEX_USED`) + sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_NO_GOOD_INDEX_USED`) AS `full_scans` from `performance_schema`.`events_statements_summary_by_user_by_event_name` group by if(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER`) order by sum(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_TIMER_WAIT`) desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$latest_file_io`
+-- Final view structure for view `x$user_summary_by_statement_type`
 --
 
-DROP TABLE IF EXISTS `x$latest_file_io`;
-/*!50001 DROP VIEW IF EXISTS `x$latest_file_io`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$latest_file_io` (
-  `thread` tinyint NOT NULL,
-  `file` tinyint NOT NULL,
-  `latency` tinyint NOT NULL,
-  `operation` tinyint NOT NULL,
-  `requested` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$user_summary_by_statement_type`*/;
+/*!50001 DROP VIEW IF EXISTS `x$user_summary_by_statement_type`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$user_summary_by_statement_type` AS select if(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER`) AS `user`,substring_index(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`EVENT_NAME`,'/',-1) AS `statement`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`COUNT_STAR` AS `total`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`MAX_TIMER_WAIT` AS `max_latency`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_LOCK_TIME` AS `lock_latency`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_ROWS_SENT` AS `rows_sent`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_ROWS_EXAMINED` AS `rows_examined`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_ROWS_AFFECTED` AS `rows_affected`,`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_NO_INDEX_USED` + `performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_NO_GOOD_INDEX_USED` AS `full_scans` from `performance_schema`.`events_statements_summary_by_user_by_event_name` where `performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` <> 0 order by if(`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_statements_summary_by_user_by_event_name`.`USER`),`performance_schema`.`events_statements_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$memory_by_host_by_current_bytes`
+-- Final view structure for view `x$wait_classes_global_by_avg_latency`
 --
 
-DROP TABLE IF EXISTS `x$memory_by_host_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `x$memory_by_host_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$memory_by_host_by_current_bytes` (
-  `host` tinyint NOT NULL,
-  `current_count_used` tinyint NOT NULL,
-  `current_allocated` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `current_max_alloc` tinyint NOT NULL,
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$wait_classes_global_by_avg_latency`*/;
+/*!50001 DROP VIEW IF EXISTS `x$wait_classes_global_by_avg_latency`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=TEMPTABLE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$wait_classes_global_by_avg_latency` AS select substring_index(`performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME`,'/',3) AS `event_class`,sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`COUNT_STAR`) AS `total`,sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT`) AS `total_latency`,min(`performance_schema`.`events_waits_summary_global_by_event_name`.`MIN_TIMER_WAIT`) AS `min_latency`,ifnull(sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT`) / nullif(sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`COUNT_STAR`),0),0) AS `avg_latency`,max(`performance_schema`.`events_waits_summary_global_by_event_name`.`MAX_TIMER_WAIT`) AS `max_latency` from `performance_schema`.`events_waits_summary_global_by_event_name` where `performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT` > 0 and `performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME` <> 'idle' group by substring_index(`performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME`,'/',3) order by ifnull(sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT`) / nullif(sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`COUNT_STAR`),0),0) desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$memory_by_thread_by_current_bytes`
+-- Final view structure for view `x$wait_classes_global_by_latency`
 --
 
-DROP TABLE IF EXISTS `x$memory_by_thread_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `x$memory_by_thread_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$memory_by_thread_by_current_bytes` (
-  `thread_id` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `current_count_used` tinyint NOT NULL,
-  `current_allocated` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `current_max_alloc` tinyint NOT NULL,
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$wait_classes_global_by_latency`*/;
+/*!50001 DROP VIEW IF EXISTS `x$wait_classes_global_by_latency`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=TEMPTABLE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$wait_classes_global_by_latency` AS select substring_index(`performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME`,'/',3) AS `event_class`,sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`COUNT_STAR`) AS `total`,sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT`) AS `total_latency`,min(`performance_schema`.`events_waits_summary_global_by_event_name`.`MIN_TIMER_WAIT`) AS `min_latency`,ifnull(sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT`) / nullif(sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`COUNT_STAR`),0),0) AS `avg_latency`,max(`performance_schema`.`events_waits_summary_global_by_event_name`.`MAX_TIMER_WAIT`) AS `max_latency` from `performance_schema`.`events_waits_summary_global_by_event_name` where `performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT` > 0 and `performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME` <> 'idle' group by substring_index(`performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME`,'/',3) order by sum(`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT`) desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$memory_by_user_by_current_bytes`
+-- Final view structure for view `x$waits_by_host_by_latency`
 --
 
-DROP TABLE IF EXISTS `x$memory_by_user_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `x$memory_by_user_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$memory_by_user_by_current_bytes` (
-  `user` tinyint NOT NULL,
-  `current_count_used` tinyint NOT NULL,
-  `current_allocated` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `current_max_alloc` tinyint NOT NULL,
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$waits_by_host_by_latency`*/;
+/*!50001 DROP VIEW IF EXISTS `x$waits_by_host_by_latency`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$waits_by_host_by_latency` AS select if(`performance_schema`.`events_waits_summary_by_host_by_event_name`.`HOST` is null,'background',`performance_schema`.`events_waits_summary_by_host_by_event_name`.`HOST`) AS `host`,`performance_schema`.`events_waits_summary_by_host_by_event_name`.`EVENT_NAME` AS `event`,`performance_schema`.`events_waits_summary_by_host_by_event_name`.`COUNT_STAR` AS `total`,`performance_schema`.`events_waits_summary_by_host_by_event_name`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_waits_summary_by_host_by_event_name`.`AVG_TIMER_WAIT` AS `avg_latency`,`performance_schema`.`events_waits_summary_by_host_by_event_name`.`MAX_TIMER_WAIT` AS `max_latency` from `performance_schema`.`events_waits_summary_by_host_by_event_name` where `performance_schema`.`events_waits_summary_by_host_by_event_name`.`EVENT_NAME` <> 'idle' and `performance_schema`.`events_waits_summary_by_host_by_event_name`.`SUM_TIMER_WAIT` > 0 order by if(`performance_schema`.`events_waits_summary_by_host_by_event_name`.`HOST` is null,'background',`performance_schema`.`events_waits_summary_by_host_by_event_name`.`HOST`),`performance_schema`.`events_waits_summary_by_host_by_event_name`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$memory_global_by_current_bytes`
+-- Final view structure for view `x$waits_by_user_by_latency`
 --
 
-DROP TABLE IF EXISTS `x$memory_global_by_current_bytes`;
-/*!50001 DROP VIEW IF EXISTS `x$memory_global_by_current_bytes`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$memory_global_by_current_bytes` (
-  `event_name` tinyint NOT NULL,
-  `current_count` tinyint NOT NULL,
-  `current_alloc` tinyint NOT NULL,
-  `current_avg_alloc` tinyint NOT NULL,
-  `high_count` tinyint NOT NULL,
-  `high_alloc` tinyint NOT NULL,
-  `high_avg_alloc` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$waits_by_user_by_latency`*/;
+/*!50001 DROP VIEW IF EXISTS `x$waits_by_user_by_latency`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$waits_by_user_by_latency` AS select if(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER`) AS `user`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`EVENT_NAME` AS `event`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`COUNT_STAR` AS `total`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`AVG_TIMER_WAIT` AS `avg_latency`,`performance_schema`.`events_waits_summary_by_user_by_event_name`.`MAX_TIMER_WAIT` AS `max_latency` from `performance_schema`.`events_waits_summary_by_user_by_event_name` where `performance_schema`.`events_waits_summary_by_user_by_event_name`.`EVENT_NAME` <> 'idle' and `performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is not null and `performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` > 0 order by if(`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER` is null,'background',`performance_schema`.`events_waits_summary_by_user_by_event_name`.`USER`),`performance_schema`.`events_waits_summary_by_user_by_event_name`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Temporary table structure for view `x$memory_global_total`
+-- Final view structure for view `x$waits_global_by_latency`
 --
 
-DROP TABLE IF EXISTS `x$memory_global_total`;
-/*!50001 DROP VIEW IF EXISTS `x$memory_global_total`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$memory_global_total` (
-  `total_allocated` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+/*!50001 DROP TABLE IF EXISTS `x$waits_global_by_latency`*/;
+/*!50001 DROP VIEW IF EXISTS `x$waits_global_by_latency`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 CREATE ALGORITHM=MERGE */
+/*!50013 DEFINER=`mariadb.sys`@`localhost` SQL SECURITY INVOKER */
+/*!50001 VIEW `x$waits_global_by_latency` AS select `performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME` AS `events`,`performance_schema`.`events_waits_summary_global_by_event_name`.`COUNT_STAR` AS `total`,`performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT` AS `total_latency`,`performance_schema`.`events_waits_summary_global_by_event_name`.`AVG_TIMER_WAIT` AS `avg_latency`,`performance_schema`.`events_waits_summary_global_by_event_name`.`MAX_TIMER_WAIT` AS `max_latency` from `performance_schema`.`events_waits_summary_global_by_event_name` where `performance_schema`.`events_waits_summary_global_by_event_name`.`EVENT_NAME` <> 'idle' and `performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT` > 0 order by `performance_schema`.`events_waits_summary_global_by_event_name`.`SUM_TIMER_WAIT` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Temporary table structure for view `x$processlist`
---
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-DROP TABLE IF EXISTS `x$processlist`;
-/*!50001 DROP VIEW IF EXISTS `x$processlist`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$processlist` (
-  `thd_id` tinyint NOT NULL,
-  `conn_id` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `command` tinyint NOT NULL,
-  `state` tinyint NOT NULL,
-  `time` tinyint NOT NULL,
-  `current_statement` tinyint NOT NULL,
-  `statement_latency` tinyint NOT NULL,
-  `progress` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `tmp_tables` tinyint NOT NULL,
-  `tmp_disk_tables` tinyint NOT NULL,
-  `full_scan` tinyint NOT NULL,
-  `last_statement` tinyint NOT NULL,
-  `last_statement_latency` tinyint NOT NULL,
-  `current_memory` tinyint NOT NULL,
-  `last_wait` tinyint NOT NULL,
-  `last_wait_latency` tinyint NOT NULL,
-  `source` tinyint NOT NULL,
-  `trx_latency` tinyint NOT NULL,
-  `trx_state` tinyint NOT NULL,
-  `trx_autocommit` tinyint NOT NULL,
-  `pid` tinyint NOT NULL,
-  `program_name` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$ps_digest_95th_percentile_by_avg_us`
---
-
-DROP TABLE IF EXISTS `x$ps_digest_95th_percentile_by_avg_us`;
-/*!50001 DROP VIEW IF EXISTS `x$ps_digest_95th_percentile_by_avg_us`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$ps_digest_95th_percentile_by_avg_us` (
-  `avg_us` tinyint NOT NULL,
-  `percentile` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$ps_digest_avg_latency_distribution`
---
-
-DROP TABLE IF EXISTS `x$ps_digest_avg_latency_distribution`;
-/*!50001 DROP VIEW IF EXISTS `x$ps_digest_avg_latency_distribution`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$ps_digest_avg_latency_distribution` (
-  `cnt` tinyint NOT NULL,
-  `avg_us` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$ps_schema_table_statistics_io`
---
-
-DROP TABLE IF EXISTS `x$ps_schema_table_statistics_io`;
-/*!50001 DROP VIEW IF EXISTS `x$ps_schema_table_statistics_io`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$ps_schema_table_statistics_io` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `count_read` tinyint NOT NULL,
-  `sum_number_of_bytes_read` tinyint NOT NULL,
-  `sum_timer_read` tinyint NOT NULL,
-  `count_write` tinyint NOT NULL,
-  `sum_number_of_bytes_write` tinyint NOT NULL,
-  `sum_timer_write` tinyint NOT NULL,
-  `count_misc` tinyint NOT NULL,
-  `sum_timer_misc` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$schema_flattened_keys`
---
-
-DROP TABLE IF EXISTS `x$schema_flattened_keys`;
-/*!50001 DROP VIEW IF EXISTS `x$schema_flattened_keys`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$schema_flattened_keys` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `index_name` tinyint NOT NULL,
-  `non_unique` tinyint NOT NULL,
-  `subpart_exists` tinyint NOT NULL,
-  `index_columns` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$schema_index_statistics`
---
-
-DROP TABLE IF EXISTS `x$schema_index_statistics`;
-/*!50001 DROP VIEW IF EXISTS `x$schema_index_statistics`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$schema_index_statistics` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `index_name` tinyint NOT NULL,
-  `rows_selected` tinyint NOT NULL,
-  `select_latency` tinyint NOT NULL,
-  `rows_inserted` tinyint NOT NULL,
-  `insert_latency` tinyint NOT NULL,
-  `rows_updated` tinyint NOT NULL,
-  `update_latency` tinyint NOT NULL,
-  `rows_deleted` tinyint NOT NULL,
-  `delete_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$schema_table_lock_waits`
---
-
-DROP TABLE IF EXISTS `x$schema_table_lock_waits`;
-/*!50001 DROP VIEW IF EXISTS `x$schema_table_lock_waits`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$schema_table_lock_waits` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `waiting_thread_id` tinyint NOT NULL,
-  `waiting_pid` tinyint NOT NULL,
-  `waiting_account` tinyint NOT NULL,
-  `waiting_lock_type` tinyint NOT NULL,
-  `waiting_lock_duration` tinyint NOT NULL,
-  `waiting_query` tinyint NOT NULL,
-  `waiting_query_secs` tinyint NOT NULL,
-  `waiting_query_rows_affected` tinyint NOT NULL,
-  `waiting_query_rows_examined` tinyint NOT NULL,
-  `blocking_thread_id` tinyint NOT NULL,
-  `blocking_pid` tinyint NOT NULL,
-  `blocking_account` tinyint NOT NULL,
-  `blocking_lock_type` tinyint NOT NULL,
-  `blocking_lock_duration` tinyint NOT NULL,
-  `sql_kill_blocking_query` tinyint NOT NULL,
-  `sql_kill_blocking_connection` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$schema_table_statistics`
---
-
-DROP TABLE IF EXISTS `x$schema_table_statistics`;
-/*!50001 DROP VIEW IF EXISTS `x$schema_table_statistics`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$schema_table_statistics` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `total_latency` tinyint NOT NULL,
-  `rows_fetched` tinyint NOT NULL,
-  `fetch_latency` tinyint NOT NULL,
-  `rows_inserted` tinyint NOT NULL,
-  `insert_latency` tinyint NOT NULL,
-  `rows_updated` tinyint NOT NULL,
-  `update_latency` tinyint NOT NULL,
-  `rows_deleted` tinyint NOT NULL,
-  `delete_latency` tinyint NOT NULL,
-  `io_read_requests` tinyint NOT NULL,
-  `io_read` tinyint NOT NULL,
-  `io_read_latency` tinyint NOT NULL,
-  `io_write_requests` tinyint NOT NULL,
-  `io_write` tinyint NOT NULL,
-  `io_write_latency` tinyint NOT NULL,
-  `io_misc_requests` tinyint NOT NULL,
-  `io_misc_latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$schema_table_statistics_with_buffer`
---
-
-DROP TABLE IF EXISTS `x$schema_table_statistics_with_buffer`;
-/*!50001 DROP VIEW IF EXISTS `x$schema_table_statistics_with_buffer`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$schema_table_statistics_with_buffer` (
-  `table_schema` tinyint NOT NULL,
-  `table_name` tinyint NOT NULL,
-  `rows_fetched` tinyint NOT NULL,
-  `fetch_latency` tinyint NOT NULL,
-  `rows_inserted` tinyint NOT NULL,
-  `insert_latency` tinyint NOT NULL,
-  `rows_updated` tinyint NOT NULL,
-  `update_latency` tinyint NOT NULL,
-  `rows_deleted` tinyint NOT NULL,
-  `delete_latency` tinyint NOT NULL,
-  `io_read_requests` tinyint NOT NULL,
-  `io_read` tinyint NOT NULL,
-  `io_read_latency` tinyint NOT NULL,
-  `io_write_requests` tinyint NOT NULL,
-  `io_write` tinyint NOT NULL,
-  `io_write_latency` tinyint NOT NULL,
-  `io_misc_requests` tinyint NOT NULL,
-  `io_misc_latency` tinyint NOT NULL,
-  `innodb_buffer_allocated` tinyint NOT NULL,
-  `innodb_buffer_data` tinyint NOT NULL,
-  `innodb_buffer_free` tinyint NOT NULL,
-  `innodb_buffer_pages` tinyint NOT NULL,
-  `innodb_buffer_pages_hashed` tinyint NOT NULL,
-  `innodb_buffer_pages_old` tinyint NOT NULL,
-  `innodb_buffer_rows_cached` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$schema_tables_with_full_table_scans`
---
-
-DROP TABLE IF EXISTS `x$schema_tables_with_full_table_scans`;
-/*!50001 DROP VIEW IF EXISTS `x$schema_tables_with_full_table_scans`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$schema_tables_with_full_table_scans` (
-  `object_schema` tinyint NOT NULL,
-  `object_name` tinyint NOT NULL,
-  `rows_full_scanned` tinyint NOT NULL,
-  `latency` tinyint NOT NULL
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary table structure for view `x$session`
---
-
-DROP TABLE IF EXISTS `x$session`;
-/*!50001 DROP VIEW IF EXISTS `x$session`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `x$session` (
-  `thd_id` tinyint NOT NULL,
-  `conn_id` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `db` tinyint NOT NULL,
-  `command` tinyint NOT NULL,
-  `state` tinyint NOT NULL,
-  `time` tinyint NOT NULL,
-  `current_statement` tinyint NOT NULL,
-  `statement_latency` tinyint NOT NULL,
-  `progress` tinyint NOT NULL,
-  `lock_latency` tinyint NOT NULL,
-  `rows_examined` tinyint NOT NULL,
-  `rows_sent` tinyint NOT NULL,
-  `rows_affected` tinyint NOT NULL,
-  `tmp_tables` tinyint NOT NULL,
-  `tmp_disk_tables` tinyint NOT NULL,
-  `full_scan`
+-- Dump completed on 2023-02-16 15:18:38
