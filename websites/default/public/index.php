@@ -33,7 +33,7 @@ try {
     }
 
     if ($uri == strtolower($uri)) {
-        $page = $controller->$action();
+        $page = $controller->$action(...$route);
     } else {
         http_response_code(301);
         header('location: /'.strtolower($uri));

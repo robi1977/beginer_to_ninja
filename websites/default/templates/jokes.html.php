@@ -10,9 +10,9 @@
             $date = new DateTime($joke['jokedate']); //utworzenie obiektu DateTime z datą ustawioną na tą pobraną z bazy danych
             echo $date->format('jS F Y'); //przeformatowanie daty aby wygladala na 4th August 1997
         ?> 
-        <a href="index.php?action=edit&id=<?=$joke['id']?>">Edytuj</a>
+        <a href="/joke/edit/<?=$joke['id']?>">Edytuj</a>
         
-        <form action="index.php?action=delete" method="POST">
+        <form action="/joke/delete" method="POST">
             <input type="hidden" name="id" value="<?=$joke['id']?>" />
             <input type="submit" value="Usuń" />
         </form>
