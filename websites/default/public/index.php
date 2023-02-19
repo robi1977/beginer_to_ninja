@@ -18,6 +18,12 @@ try {
     $jokeController = new JokeController($jokesTable, $authorsTable);
 
     $action = $_GET['action'] ?? 'home'; //zamiast else if skrócenie 
+
+    if ($action ==strtolower($action)) {
+        $jokeController->$action();
+    } else {
+        echo 'Strona o danym adresie nie istnieje';
+    }
     $page = $jokeController->$action();
 
     $title = $page['title'];
