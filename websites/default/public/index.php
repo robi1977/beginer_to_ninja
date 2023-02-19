@@ -22,7 +22,7 @@ try {
     if ($action ==strtolower($action)) {
         $jokeController->$action();
     } else {
-        echo 'Strona o danym adresie nie istnieje';
+        header('location: index.php?action='.strtolower($action));
     }
     $page = $jokeController->$action();
 
