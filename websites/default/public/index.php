@@ -16,19 +16,27 @@ try {
     $jokesTable = new DatabaseTable($pdo, 'joke', 'id');
     $authorsTable = new DatabaseTable($pdo, 'author', 'id');
 
-    $action = $_GET['action'] ?? 'home'; //zamiast else if skrócenie 
-    $controllerName = $_GET['controller'] ?? 'joke';
+    $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
+    if($uri == '') {
+        $uri = 'joke/list';
+    }
+
+    $route = explode('/', $uri);
+    $controllerName = array_shift($route);
+    $action = array_shift($route);
+
 
     if($controllerName == 'joke') {
         $controller = new JokeController($jokesTable, $authorsTable);
     } else if ($controllerName == 'author') {
         $controller = new AuthorController($authorsTable);
     }
-    if ($action ==strtolower($action) && $controllerName == strtolower($controllerName)) {
+
+    if ($uri == strtolower($uri)) {
         $page = $controller->$action();
     } else {
         http_response_code(301);
-        header('location: index.php?controller='.strtolower($controllerName).'&action='.strtolower($action));
+        header('location: /'.strtolower($uri));
     }
 
     $title = $page['title'];
