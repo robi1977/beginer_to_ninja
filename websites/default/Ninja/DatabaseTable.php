@@ -1,9 +1,10 @@
 <?php
+namespace Ninja;
 
 class DatabaseTable 
 {
 
-public function __construct(private PDO $pdo, private string $table, private string $primaryKey)
+public function __construct(private \PDO $pdo, private string $table, private string $primaryKey)
 {
 }
 

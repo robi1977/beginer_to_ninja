@@ -3,7 +3,7 @@ include __DIR__.'/../includes/autoloader.php';
 
 $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'),'?');
 
-$jokeWebsite = new JokeWebsite();
+$jokeWebsite = new \Ijdb\JokeWebsite();
 
-$entryPoint = new EntryPoint($jokeWebsite);
+$entryPoint = new \Ninja\EntryPoint($jokeWebsite);
 $entryPoint->run($uri);
